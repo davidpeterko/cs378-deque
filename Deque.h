@@ -17,6 +17,7 @@
 #include <memory>    // allocator
 #include <stdexcept> // out_of_range
 #include <utility>   // !=, <=, >, >=
+#include <iostream>  //cout
 
 #define ARRSIZE 20
 
@@ -163,27 +164,26 @@ class my_deque {
         bool valid () const {
 
 
-
-            if(_inner_begin > _inner_end){
-                return false;
-            }
-
-            if(_outer_begin > _outer_end){
-                return false;
-            }
-        
             if(_size < 0){
-                return false;
-            }
-
-
-            if(_outer_absolute_s > _outer_absolute_e){
                 return false;
             }
 
             if(_cap < 0){
                 return false;
             }
+
+            if(_inner_begin > _inner_end){
+                return false;
+            }
+
+            if(_inner_front_index > ARRSIZE){
+                return false;
+            }
+
+            if(_outer_front_index > _outer_size){
+                return false;
+            }
+
             
             return true;}
 
@@ -729,70 +729,6 @@ class my_deque {
         explicit my_deque (size_type s, const_reference v = value_type(), const allocator_type& a = allocator_type()):
 
             _a(a) {
-                /*
-
-                _size = s;
-
-                size_type x =s/ARRSIZE+2;
-               
-                _top=_b.allocate(x);
-
-                for(int i=0; i<x; ++i){
-                    _top[i] = _a.allocate(ARRSIZE);
-                }
-
-                _outer_absolute_s = _top;
-                _outer_absolute_e = _top + x -1;
-                _bot = _outer_absolute_e;
-
-                if(x == 1){
-                    _outer_begin = _top+1;
-                    _outer_end = _top+1;
-                }
-                else if(x > 1){
-                    _outer_begin = _top+1;
-                    _outer_end = _top+x-1;
-                }
-
-                //top is our deque_map
-                _inner_begin = _top[0];                      //from
-
-                if(s < 20){
-                    _inner_end = _inner_begin + s;
-                    uninitialized_fill(_a, _inner_begin, _inner_end, v);
-                }
-                else{
-                    size_type temp = s/20;
-
-                    pointer temp_start;
-                    pointer temp_end;
-
-                    for(int i = 0; i < temp; ++i){
-                        temp_start = _top[i];
-                        temp_end = _top[i]+19;
-                        uninitialized_fill(_a, temp_start, temp_end, v);
-                    }
-
-                    //done filling the front , now need to fill the offset if there exists
-
-                    size_type offset = s % 20;
-                    _inner_end=_top[temp]+offset;
-                    temp_start = _top[temp];
-                    //_outer_end = _top+temp-1;
-                    uninitialized_fill(_a, temp_start, _inner_end, v);
-                }
-
-                _inner_absolute_s = _top[0];                            //abs start of the allocation
-                _inner_absolute_e = _top[x-1]+19;                       //abs end of the allocation
-
-                _cap = x * ARRSIZE;
-
-
-                uninitialized_fill(_a, _inner_begin, _inner_end, v);
-                */
-
-
-
                 _size = s;
                 size_type offset = s % ARRSIZE;
                 size_type num_row_count;
@@ -805,31 +741,31 @@ class my_deque {
                 }
 
 
-                outer_size = (s/ARRSIZE) + 1;                   //get the outer array size
-                outer_size = num_row_count;
+                _outer_size = (s/ARRSIZE) + 1;                   //get the outer array size
+                _outer_size = num_row_count;
 
-                _cap = outer_size * ARRSIZE;
+                _cap = _outer_size * ARRSIZE;
 
-                _top = _b.allocate(outer_size);                 //allocate outer array
+                _top = _b.allocate(_outer_size);                 //allocate outer array
 
 
                 //allocateing the inner arrays
-                for(int i = 0; i < outer_size; ++i){
+                for(int i = 0; i < _outer_size; ++i){
                     _top[i] = _a.allocate(ARRSIZE);
                 }
 
-                size_type start_index = 0;
+               size_type start_index = 0;
                 size_type remaining_values = s;
 
-                size_type last_index = outer_size - 1;
+                size_type last_index = _outer_size - 1;
 
                 //filling the inner arrays
-                for(int i = 0; i < outer_size; ++i){
+                for(int i = 0; i < _outer_size; ++i){
 
                     //filling first row
                     if( i == 0){
-                        _inner_begin = _top[0] + start_index;
-                        _inner_front_index = start_index;                                       //set to zero
+                        _inner_begin = _top[0]+ start_index;
+                        _inner_front_index = 0  + start_index;                                       //set to zero
                         _outer_front_index = 0;                                                 //set to zero, so its at the front
                     
                         if(ARRSIZE <= s){
@@ -870,6 +806,9 @@ class my_deque {
                 //debugging
                 //run asserts to check inner and outer front and end
 
+                _outer_absolute_s = _top;
+                _outer_absolute_e = _top+num_row_count-1;
+
             
             assert(valid());}
 
@@ -889,7 +828,7 @@ class my_deque {
                 _outer_back_index = that._outer_back_index;
 
                 //reallocate outside space
-                _top.allocate(_outer_size);
+                _top = _b.allocate(_outer_size);
 
                 //allocate and fill
                 for(int i = 0; i < _outer_size; ++i){
@@ -911,14 +850,14 @@ class my_deque {
                     for(int inner = 0; inner < ARRSIZE; ++inner) {
 
                         //check to see if that spot is the _inner_begin
-                        if((that._top[i] + j) == that._inner_begin){
-                            x_start_loc = i;
-                            y_start_loc = j;
+                        if((that._top[outer] + inner) == that._inner_begin){
+                            x_start_loc = outer;
+                            y_start_loc = inner;
                         }
 
-                        if((that._top[i] + j) == that._inner_end){
-                            x_end_loc = i;
-                            y_end_loc = j;
+                        if((that._top[outer] + inner) == that._inner_end){
+                            x_end_loc = outer;
+                            y_end_loc = inner;
                         }
                     }
                 }
@@ -979,7 +918,8 @@ class my_deque {
             }
             else{
                 clear();
-                //stuff?
+                
+
             }
 
 
@@ -995,9 +935,15 @@ class my_deque {
          */
         reference operator [] (size_type index) {
 
+            size_type temp_inner = _inner_front_index + index;
+            size_type temp_outer = _outer_front_index;
 
-            static value_type dummy;
-            return dummy;}
+            while(temp_inner >= ARRSIZE){
+                temp_inner = temp_inner - ARRSIZE;
+                ++temp_outer;
+            }
+
+            return _top[temp_outer][temp_inner];}
 
         /**
          * <your documentation>
@@ -1033,7 +979,7 @@ class my_deque {
          */
         reference back () {
 
-            return *(_inner_end-1);}
+            return *(_inner_end - 1);}
 
         /**
          * <your documentation>
