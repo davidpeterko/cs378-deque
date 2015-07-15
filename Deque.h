@@ -139,19 +139,21 @@ class my_deque {
 
         pointer* _outer_absolute_s;                 //pointer to pointer, this pointer to start of the outer array, we use this to iterate through the outer array
         pointer* _outer_absolute_e;                 //s and e point to the definite start and end, where as outer_begin and outer_end point to where the actual data starts, diff frmo outer s and outer e
-        pointer* _outer_begin;                      //beginning of the used space
-        pointer* _outer_end;                        //end of the used space
 
         //inner arrays
         pointer _inner_begin;                       //this keeps track of the inners start
         pointer _inner_end;                         //this keeps track of the inner's end
-        pointer _inner_absolute_s;                  //beignning of the allocated dpace
-        pointer _inner_absolute_e;                  
+    
+        size_type _inner_front_index;               //index to keep track of the inner array front location
+        size_type _inner_back_index;                //index to keep track of the inner array back location
+
+        size_type _outer_front_index;               //index to keep track of the outer array front location
+        size_type _outer_back_index;                //index to keep track of the outer array back location
+
+        size_type _outer_size;
         size_type _size;                            //keeps track of the size of the used space
         size_type _cap;
 
-        pointer temp_start;
-        pointer temp_end;
 
     private:
         // -----
@@ -700,20 +702,24 @@ class my_deque {
         explicit my_deque (const allocator_type& a = allocator_type()):
 
             _a(a){
-
-                //set everything to zero - this is basically the zero consturctor, no arguements -> my_deque<int> s
-                _outer_begin = 0;                                   //set outer's to 0
-                _outer_end = 0;             
-                _inner_begin = 0;                                   //set inners to 0
-                _inner_end = 0;
-                _outer_absolute_s = 0;                                       //set the outer absol to 0
-                _outer_absolute_e = 0;   
-                _inner_absolute_s = 0;
-                _inner_absolute_e = 0;
-                _size = 0;  
                 _top = 0;
                 _bot = 0;
+
+                _outer_absolute_s = 0;                 //pointer to pointer, this pointer to start of the outer array, we use this to iterate through the outer array
+                _outer_absolute_e = 0;                 //s and e point to the definite start and end, where as outer_begin and outer_end point to where the actual data starts, diff frmo outer s and outer e
+
+                _inner_begin = 0;                       //this keeps track of the inners start
+                _inner_end = 0;                         //this keeps track of the inner's end
+            
+                _inner_front_index = 0;
+                _inner_back_index = 0;
+                _outer_front_index = 0;
+                _outer_back_index = 0;
+
+                _outer_size = 0;
+                _size =0;                            //keeps track of the size of the used space
                 _cap = 0;
+
 
             assert(valid());}
 
@@ -723,6 +729,7 @@ class my_deque {
         explicit my_deque (size_type s, const_reference v = value_type(), const allocator_type& a = allocator_type()):
 
             _a(a) {
+                /*
 
                 _size = s;
 
@@ -782,6 +789,87 @@ class my_deque {
 
 
                 uninitialized_fill(_a, _inner_begin, _inner_end, v);
+                */
+
+
+
+                _size = s;
+                size_type offset = s % ARRSIZE;
+                size_type num_row_count;
+
+                if(offset == 0){
+                    num_row_count = s/ARRSIZE;
+                }
+                else if(offset > 0){
+                    num_row_count = s/ARRSIZE + 1;
+                }
+
+
+                outer_size = (s/ARRSIZE) + 1;                   //get the outer array size
+                outer_size = num_row_count;
+
+                _cap = outer_size * ARRSIZE;
+
+                _top = _b.allocate(outer_size);                 //allocate outer array
+
+
+                //allocateing the inner arrays
+                for(int i = 0; i < outer_size; ++i){
+                    _top[i] = _a.allocate(ARRSIZE);
+                }
+
+                size_type start_index = 0;
+                size_type remaining_values = s;
+
+                size_type last_index = outer_size - 1;
+
+                //filling the inner arrays
+                for(int i = 0; i < outer_size; ++i){
+
+                    //filling first row
+                    if( i == 0){
+                        _inner_begin = _top[0] + start_index;
+                        _inner_front_index = start_index;                                       //set to zero
+                        _outer_front_index = 0;                                                 //set to zero, so its at the front
+                    
+                        if(ARRSIZE <= s){
+                            uninitialized_fill(_a, _inner_begin, _top[0] + ARRSIZE, v);
+                            remaining_values = remaining_values - ARRSIZE;
+                        }
+
+                        //this puts data on the row if it fits onn one row
+                        else{
+                            _inner_end = _inner_begin + s;
+                            _inner_back_index = start_index + s;
+                            _outer_back_index = 0;
+                            uninitialized_fill(_a, _inner_begin, _inner_end, v);
+                            remaining_values = remaining_values - s;
+                        }
+                    }
+                    //filling last row
+                    else if( i == last_index){
+                        _inner_end = _top[i] + remaining_values;
+                        _inner_back_index = remaining_values;
+                        _outer_back_index = i;
+                        uninitialized_fill(_a, _top[i], _inner_end, v);
+
+                        remaining_values = remaining_values - remaining_values;
+
+                        if(remaining_values != 0){
+                            //this will be an error, we minused wrong
+                            //cout <<"error, we didnt calcualte reminaing right" << endl;
+                        }
+                    }
+                    //filling inbetween rows
+                    else{
+                        uninitialized_fill(_a, _top[i], _top[i] + ARRSIZE, v);
+                        remaining_values = remaining_values - ARRSIZE;
+                    }
+                }
+
+                //debugging
+                //run asserts to check inner and outer front and end
+
             
             assert(valid());}
 
@@ -791,55 +879,58 @@ class my_deque {
         my_deque (const my_deque& that):
             _a(that._a){
 
-                _size = that.size();
+                //assign old deque to new deque stuff
+                _size = that._size;
+                _cap = that._cap;
+                _outer_size = that._outer_size;
+                _inner_front_index = that._inner_front_index;
+                _outer_front_index = that._outer_front_index;
+                _inner_back_index = that._inner_back_index;
+                _outer_back_index = that._outer_back_index;
 
-                size_type x = _size/ARRSIZE + 2;
+                //reallocate outside space
+                _top.allocate(_outer_size);
 
-                _top = _b.allocate(x);
-
-
-                for(int i=0; i<x; ++i){
+                //allocate and fill
+                for(int i = 0; i < _outer_size; ++i){
                     _top[i] = _a.allocate(ARRSIZE);
                 }
 
-                _outer_absolute_s = _top;
-                _outer_absolute_e = _top + x -1;
-                _bot = _outer_absolute_e;
-
-                if(x == 1){
-                    _outer_begin = _top+1;
-                    _outer_end = _top+1;
-                }
-                else if(x > 1){
-                    _outer_begin = _top+1;
-                    _outer_end = _top+x;
+                for(int i = 0 ; i < _outer_size; ++i){
+                    uninitialized_copy(_a, that._top[i], that._top[i] + ARRSIZE, _top[i]);
                 }
 
-                //top is our deque_map
-                _inner_begin = _top[1];                      //from
+                //now we gotta get the _inner_begin and _inner end
+                int x_start_loc;
+                int x_end_loc;
+                int y_start_loc;
+                int y_end_loc;
 
-                size_type offset;
+                for(int outer = 0; outer < _outer_size; ++outer){
 
-                if(_size <= 20){
-                    _inner_end = _inner_begin + _size;
+                    for(int inner = 0; inner < ARRSIZE; ++inner) {
+
+                        //check to see if that spot is the _inner_begin
+                        if((that._top[i] + j) == that._inner_begin){
+                            x_start_loc = i;
+                            y_start_loc = j;
+                        }
+
+                        if((that._top[i] + j) == that._inner_end){
+                            x_end_loc = i;
+                            y_end_loc = j;
+                        }
+                    }
                 }
-                else{
 
-                    //_inner_end setting the end
+                //now we have the index locations
+                _inner_begin = _top[x_start_loc] + y_start_loc;
+                _inner_end = _top[x_end_loc] + y_end_loc;
 
-                    size_type temp = _size/20;
-                    size_type offset = _size % 20;
-                    _inner_end=_top[temp]+offset;
-                    _outer_end = _top+temp+1;
-                }
 
-                _inner_absolute_s = _top[0];
-                _inner_absolute_e = _top[0+x-1]+19;
-
-                //_inner_end is set to offset
-                //_inner_start is looking at the beignning of a inner array set to top[1]
-
-                uninitialized_copy(_a, that.begin(), that.end(), _inner_begin);
+                //debug
+                //cout << "The object here is: " << *_inner_begin << endl;
+                //cout << "The object here is: " << *_inner_end << endl;
 
             assert(valid());}
 
