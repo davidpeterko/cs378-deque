@@ -8,7 +8,6 @@ FILES :=									\
 	TestDeque.c++							\
 	TestDeque.out							\
 
-
 ifeq ($(CXX), clang++)
     COVFLAGS := --coverage
     GCOV     := gcov-4.6
@@ -55,10 +54,9 @@ Doxyfile:
 	doxygen -g
 
 TestDeque: Deque.h TestDeque.c++
-	$(CXX) $(COVFLAGS) $(CXXFLAGS) Deque.h TestDeque.c++ -o TestDeque$(LDFLAGS)
+	$(CXX) $(COVFLAGS) $(CXXFLAGS) TestDeque.c++ -o TestDeque $(LDFLAGS)
 
 TestDeque.out: TestDeque
 	$(VALGRIND) ./TestDeque  >  TestDeque.out 2>&1
-	$(GCOV) -b Deque.h       >> TestDeque.out
 	$(GCOV) -b TestDeque.c++ >> TestDeque.out
 	cat TestDeque.out
