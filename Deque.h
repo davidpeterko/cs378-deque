@@ -918,7 +918,7 @@ class my_deque {
             }
             else{
                 clear();
-                
+
 
             }
 
@@ -956,14 +956,29 @@ class my_deque {
         // --
 
         /**
-         * <your documentation>
+         * the at function for acecss elements, this shuold throw a out of range error if they go past our bounds
          */
         reference at (size_type index) {
-            // <your code>
-            // dummy is just to be able to compile the skeleton, remove it
-            static value_type dummy;
-            return dummy;}
 
+            size_type temp_inner = _inner_front_index + index;
+            size_type temp_outer = _outer_front_index;
+
+            while(temp_inner >= ARRSIZE){
+                temp_inner = temp_inner - ARRSIZE;
+                ++temp_outer;
+            }
+
+            //check the reference out of bounds?
+            if(temp_outer > _outer_size){
+                throw std::out_of_range("The access of the operator at is trying to access a spot that is not allocated or constructed.")
+            }
+
+            if(temp_inner > ARRSIZE){
+                throw std::out_of_range("The access of the operator at is trying to access a spot that is not allocated or constructed.")
+            }
+
+
+            return _top[temp_outer][temp_inner];}
         /**
          * <your documentation>
          */
@@ -975,14 +990,14 @@ class my_deque {
         // ----
 
         /**
-         * <your documentation>
+         * returns last value of the back of the deque
          */
         reference back () {
 
             return *(_inner_end - 1);}
 
         /**
-         * <your documentation>
+         * a const_reference use of back
          */
         const_reference back () const {
             return const_cast<my_deque*>(this)->back();}
@@ -992,7 +1007,7 @@ class my_deque {
         // -----
 
         /**
-         * <your documentation>
+         * calls a iterator to start at the beginning of the deque
          */
         iterator begin () {
             // <your code>
@@ -1062,14 +1077,14 @@ class my_deque {
         // -----
 
         /**
-         * <your documentation>
+         * returns the value at the front of the deque
          */
         reference front () {
 
             return *_inner_begin;}
 
         /**
-         * <your documentation>
+         * a cosn reference return of the front value of the deque
          */
         const_reference front () const {
             return const_cast<my_deque*>(this)->front();}
@@ -1091,10 +1106,32 @@ class my_deque {
         // ---
 
         /**
-         * <your documentation>
+         * removes the last value of the deque, and reduces size, and resets our indices
          */
         void pop_back () {
-            // <your code>
+
+            if(_size == 0){
+                return;
+            }
+
+            _size = _size - 1;
+
+            //capacity doesnt change
+
+            //this index is the end of the inner array we are looking at so a value
+            //between 0-19
+            _inner_back_index = _inner_back_index - 1;
+
+            if(_inner_back_index < 0){
+                //means it was at the front fo the array, and is now needs to go back tot he previous array before above
+
+                _outer_back_index = _outer_front_index - 1;                 //so we decrement the OUTSIDE array index cause were going back u poen
+                _inner_back_index = ARRSIZE - 1;
+            }
+
+            ASSERT_TRUE(_inner_back_index < 20);
+            ASSERT_TRUE(_outer_back_index < _outer_size);
+
             assert(valid());}
 
         /**
