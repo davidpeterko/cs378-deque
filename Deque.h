@@ -110,8 +110,19 @@ class my_deque {
          * <your documentation>
          */
         friend bool operator == (const my_deque& lhs, const my_deque& rhs) {
-        
-                    return true;}
+                    //call std equal
+
+                    //check same size
+                    if(lhs.size() != rhs.size()){
+                        return false;
+                    }
+
+                    //check if nothing, zero
+                    if(lhs.size() == 0 && rhs.size() ==0){
+                        return true;
+                    }
+
+                    return std::equal(lhs.begin(), lhs.end(), rhs.begin());}
 
         // ----------
         // operator <
@@ -123,7 +134,7 @@ class my_deque {
         friend bool operator < (const my_deque& lhs, const my_deque& rhs) {
             // <your code>
             // you must use std::lexicographical_compare()
-            return true;}
+            return ;}
 
     private:
         // ----
@@ -265,10 +276,6 @@ class my_deque {
                 bool valid () const {
  
                     if(_front_outer_index > dq->_outer_size){
-                        return false;
-                    }
-
-                    if(_front_inner_index > ARRSIZE -1 ){
                         return false;
                     }
 
@@ -419,21 +426,10 @@ class my_deque {
                  * <your documentation>
                  */
                 iterator& operator -= (difference_type d) {
-                this->_front_inner_index = this->_front_inner_index - d;
 
-
-                    if(this->_front_inner_index <  0){
-                        difference_type temp= d/20;
-                        difference_type offset=d%20;
-                        if(temp==0){
-                            temp=temp+1;
-                           while(_front_inner_index!=0){
-                            offset=offset-1;
-                            _front_inner_index=_front_inner_index-1;
-                           }
-                        }
-                        this->_front_inner_index = ARRSIZE-offset;
-                        this->_front_outer_index = this->_front_outer_index - temp;
+                    while(d>0){
+                        --*this;
+                        --d;
                     }
 
                     assert(valid());
@@ -498,6 +494,9 @@ class my_deque {
                 // ----
                 // data
                 // ----
+                const my_deque* dq;
+                size_type _front_inner_index;
+                size_type _front_outer_index;
 
             private:
                 // -----
@@ -516,10 +515,10 @@ class my_deque {
                 /**
                  * <your documentation>
                  */
-                const_iterator (){
-
-
-            
+                const_iterator (const my_deque* myd, size_type inner_index, size_type outer_index){
+                    dq = myd;
+                    _front_inner_index = inner_index;
+                    _front_outer_index = outer_index;
 
                     assert(valid());}
 
@@ -536,9 +535,7 @@ class my_deque {
                  * <your documentation>
                  */
                 reference operator * () const {
-
-                    static value_type dummy;
-                    return dummy;}
+                    return dq->_top[_front_outer_index][_front_inner_index];}
 
                 // -----------
                 // operator ->
@@ -559,7 +556,22 @@ class my_deque {
                  */
                 const_iterator& operator ++ () {
                    
+                    this->_front_inner_index = this->_front_inner_index + 1;
 
+
+                    if(this->_front_inner_index > 19){
+                        this->_front_inner_index = 0;
+                        this->_front_outer_index = this->_front_outer_index + 1;
+                    }
+                   
+
+                   /// std::cout<<"dq->_top[0]: "<<dq->_top[0]<<std::endl;
+                    //std::cout<<"&(dq[_front_outer_index][_front_inner_index] "<<&(dq[_front_outer_index][_front_inner_index])<<std::endl;
+                    
+                    // if (dq->_top[0]==&(dq[_front_outer_index][_front_inner_index])){
+                    //     throw std::out_of_range("No space has been allocated");
+                    // }
+                
                     
                     assert(valid());
                     return *this;}
@@ -581,7 +593,14 @@ class my_deque {
                  * <your documentation>
                  */
                 const_iterator& operator -- () {
+                    
+                    this->_front_inner_index = this->_front_inner_index - 1;
 
+                    if(this->_front_inner_index < 0){
+                        this->_front_inner_index = 19;
+                        this->_front_outer_index = this->_front_outer_index - 1;
+                    }
+        
                     assert(valid());
                     return *this;}
 
@@ -601,8 +620,18 @@ class my_deque {
                 /**
                  * <your documentation>
                  */
-                const_iterator& operator += (difference_type) {
-                    // <your code>
+                const_iterator& operator += (difference_type d) {
+                    
+                    this->_front_inner_index = this->_front_inner_index + d;
+
+
+                    if(this->_front_inner_index >  19){
+                        difference_type temp= d/20;
+                        difference_type offset=d%20;
+                        this->_front_inner_index = offset;
+                        this->_front_outer_index = this->_front_outer_index + temp;
+                    }
+
                     assert(valid());
                     return *this;}
 
@@ -613,8 +642,13 @@ class my_deque {
                 /**
                  * <your documentation>
                  */
-                const_iterator& operator -= (difference_type) {
-                    // <your code>
+                const_iterator& operator -= (difference_type d) {
+
+                    while(d>0){
+                        --*this;
+                        --d;
+                    }
+
                     assert(valid());
                     return *this;}};
 
