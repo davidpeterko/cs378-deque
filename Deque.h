@@ -461,8 +461,13 @@ class my_deque {
                  * <your documentation>
                  */
                 friend bool operator == (const const_iterator& lhs, const const_iterator& rhs) {
-
-                    return *lhs == *rhs;}
+                    if (lhs.dq != rhs.dq)
+                        return false;
+                    if (lhs._front_inner_index != rhs._front_inner_index)
+                        return false;
+                    if (lhs._front_outer_index != rhs._front_outer_index)
+                        return false;
+                    return true;}
 
                 /**
                  * <your documentation>
@@ -495,8 +500,8 @@ class my_deque {
                 // data
                 // ----
                 const my_deque* dq;
-                size_type _front_inner_index;
-                size_type _front_outer_index;
+                 size_type _front_inner_index;
+                 size_type _front_outer_index;
 
             private:
                 // -----
@@ -504,7 +509,9 @@ class my_deque {
                 // -----
 
                 bool valid () const {
-                    // <your code>
+                    if(_front_outer_index > dq->_outer_size){
+                        return false;
+                    }
                     return true;}
 
             public:
@@ -515,7 +522,7 @@ class my_deque {
                 /**
                  * <your documentation>
                  */
-                const_iterator (const my_deque* myd, size_type inner_index, size_type outer_index){
+                const_iterator (const my_deque* myd,  size_type inner_index,  size_type outer_index){
                     dq = myd;
                     _front_inner_index = inner_index;
                     _front_outer_index = outer_index;
@@ -995,11 +1002,10 @@ class my_deque {
             return iterator(this, _inner_front_index, _outer_front_index);}
 
         /**
-         * <your documentation>
+         * calls a const iterator
          */
         const_iterator begin () const {
-            // <your code>
-            return const_iterator(/* <your arguments> */);}
+            return const_iterator(this, _inner_front_index, _outer_front_index);}
 
         // -----
         // clear
@@ -1038,7 +1044,7 @@ class my_deque {
          */
         const_iterator end () const {
             // <your code>
-            return const_iterator(/* <your arguments> */);}
+            return const_iterator(this, _inner_back_index, _outer_back_index);}
 
         // -----
         // erase
