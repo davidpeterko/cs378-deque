@@ -1062,8 +1062,8 @@ class my_deque {
             _size = _size - 1;
 
             while(i != end()){
-                *i = *i + 1;
-                ++i;
+                *i = *i + 1;                        //assignt he after value to the current value and keep pushing 
+                ++i;                                //the values forward
             }
 
             _inner_back_index = _inner_back_index - 1;
@@ -1100,10 +1100,40 @@ class my_deque {
         /**
          * insert a value at the iterator location, we push back the values behind what we inserted
          */
-        iterator insert (iterator, const_reference) {
-            // <your code>
+        iterator insert (iterator i, const_reference v) {
+            
+            //check if there is anymore space in the deque in the back
+            if(&back() == &_top[_outer_size-1][ARRSIZE-1]){
+
+                //resize(_outer_size * 2);
+                //this means that there is no space to pushback
+            }
+
+
+            //if inserting into end, call push back, push back shuld take care of the size issue with resize called in it
+            if(i == this->end()){
+                push_back(v);
+            }
+
+            //push back the inner back index, if past the array, 
+            //reset to the next array @ 0 and increment outer array pointer by 1 to next array
+            _inner_back_index = _inner_back_index + 1;
+
+            if(_inner_back_index > 19){
+                _inner_back_index = 0;
+                _outer_back_index = _outer_back_index + 1;
+            }
+
+            //copy everything from - to end, to i + 1 to end + 1
+            std::copy(i, end(), i + 1);
+
+            //assign the value of v to the position of *i, we dont change *i position
+            *i = v;
+
+            _size = _size + 1;
+
             assert(valid());
-            return iterator();}
+            return i;}
 
         // ---
         // pop

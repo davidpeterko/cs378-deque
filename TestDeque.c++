@@ -884,3 +884,31 @@ TYPED_TEST(Deque_Fixture, erase3) {
 
 	ASSERT_EQ(x.size(), 14);
 }
+
+//INSERT
+TYPED_TEST(Deque_Fixture, insert1) {
+	typedef typename TestFixture::deque_type deque_type;
+	
+	deque_type x(16, 1);
+
+	typename deque_type::iterator i = x.begin();
+
+	x.insert(i+5, 5);
+
+	ASSERT_EQ(x.size(), 17);
+	ASSERT_EQ(x[5], 5);
+}
+
+TYPED_TEST(Deque_Fixture, insert2) {
+	typedef typename TestFixture::deque_type deque_type;
+	
+	deque_type x(28, 1);
+
+	typename deque_type::iterator i = x.begin();
+
+	x.insert(i+8, 20);
+
+	ASSERT_EQ(x.size(), 29);
+	ASSERT_EQ(x[8], 20);
+}
+
