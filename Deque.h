@@ -860,15 +860,19 @@ class my_deque {
          */
         ~my_deque () {
 
-            if(empty()){
-                clear();                        //cleaqr is gonna call destroy
+            /*
+            destroy(_a, begin(), end());
 
-
-                for(int i = 0; _top > _bot; ++i){
-                    _a.deallocate(*(_top+i), ARRSIZE);
-                }
+            int i = 0;
+            while(_top <= _bot){
+                _a.deallocate(_top[i], ARRSIZE);
+                ++i;
             }
 
+            size_type temp_size = _outer_size;
+
+            _b.deallocate(_top, _outer_size);
+            */
             assert(valid());}
 
         // ----------
@@ -1016,7 +1020,7 @@ class my_deque {
          */
         void clear () {
 
-            destroy(_a, _inner_begin, _inner_end);
+            //resize(0);
             assert(valid());}
 
         // -----
@@ -1051,12 +1055,26 @@ class my_deque {
         // -----
 
         /**
-         * <your documentation>
+         * erases the value at the iterator location
          */
-        iterator erase (iterator) {
-            // <your code>
+        iterator erase (iterator i) {
+
+            _size = _size - 1;
+
+            while(i != end()){
+                *i = *i + 1;
+                ++i;
+            }
+
+            _inner_back_index = _inner_back_index - 1;
+
+            if(_inner_back_index < 0){
+                _inner_back_index = ARRSIZE - 1;
+                _outer_back_index  = _outer_back_index - 1;
+            }
+
             assert(valid());
-            return iterator();}
+            return i;}
 
         // -----
         // front
@@ -1080,7 +1098,7 @@ class my_deque {
         // ------
 
         /**
-         * <your documentation>
+         * insert a value at the iterator location, we push back the values behind what we inserted
          */
         iterator insert (iterator, const_reference) {
             // <your code>
@@ -1195,7 +1213,22 @@ class my_deque {
          * <your documentation>
          */
         void resize (size_type s, const_reference v = value_type()) {
-            // <your code>
+
+            /* 
+                 void resize (size_type s, const_reference v = value_type()) {
+            if (s == size())
+                return;
+            if (s < size())
+                _e = my_destroy(_a, begin() + s, end());
+            else if (s <= capacity())
+                _e = my_uninitialized_fill(_a, end(), begin() + s, v);
+            else {
+                reserve(std::max(2 * size(), s));
+                resize(s, v);}
+            assert(valid());}
+
+            */
+
             assert(valid());}
 
         // ----

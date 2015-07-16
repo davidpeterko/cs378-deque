@@ -846,3 +846,41 @@ TYPED_TEST(Deque_Fixture, const_iterator_minus_equal_3) {
 
 	ASSERT_EQ(*i, 0);
 }
+
+//ERASE
+TYPED_TEST(Deque_Fixture, erase1) {
+	typedef typename TestFixture::deque_type deque_type;
+	
+	deque_type x(16, 1);
+
+	typename deque_type::iterator i = x.begin();
+
+	x.erase(i + 2);
+
+	ASSERT_EQ(x.size(), 15);
+}
+
+TYPED_TEST(Deque_Fixture, erase2) {
+	typedef typename TestFixture::deque_type deque_type;
+	
+	deque_type x(16, 1);
+
+	typename deque_type::iterator i = x.begin();
+
+	x.erase(i + 7);
+
+	ASSERT_EQ(x.size(), 15);
+}
+
+TYPED_TEST(Deque_Fixture, erase3) {
+	typedef typename TestFixture::deque_type deque_type;
+	
+	deque_type x(16, 1);
+
+	typename deque_type::iterator i = x.begin();
+
+	x.erase(i + 10);
+	x.erase(i + 2);
+
+	ASSERT_EQ(x.size(), 14);
+}
