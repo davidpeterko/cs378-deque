@@ -123,7 +123,7 @@ TYPED_TEST(Deque_Fixture, copyconstr2){
 	//const deque_type y(25, 0);
 
 	const deque_type y(x);
-
+     resize()
 	ASSERT_EQ(y.back(), 16);
 	ASSERT_EQ(y.front(), 16);
 	ASSERT_EQ(y.size(), 50);

@@ -161,7 +161,7 @@ class my_deque {
         size_type _outer_front_index;               //index to keep track of the outer array front location
         size_type _outer_back_index;                //index to keep track of the outer array back location
 
-        size_type _outer_size;                      //outer arary size
+        size_type _outer_size;
         size_type _size;                            //keeps track of the size of the used space
         size_type _cap;
 
@@ -860,7 +860,7 @@ class my_deque {
          */
         ~my_deque () {
 
-            
+            /*
             destroy(_a, begin(), end());
 
             int i = 0;
@@ -872,7 +872,7 @@ class my_deque {
             size_type temp_size = _outer_size;
 
             _b.deallocate(_top, _outer_size);
-            
+            */
             assert(valid());}
 
         // ----------
@@ -1020,8 +1020,7 @@ class my_deque {
          */
         void clear () {
 
-            resize(0);
-            _size = 0;
+            //resize(0);
             assert(valid());}
 
         // -----
@@ -1208,11 +1207,8 @@ class my_deque {
          */
         void push_back (const_reference x) {
 
-            if((_outer_back_index == _outer_size -1) && (_inner_back_index == ARRSIZE-1)){
-                size_type force_size = _cap * 2;
-                resize(force_size);
-            }
-             
+            //confidiotnals need to check to resize
+
            _inner_back_index=_inner_back_index + 1;
 
            _top[_outer_back_index][_inner_back_index - 1]=x;
@@ -1226,11 +1222,10 @@ class my_deque {
          */
         void push_front (const_reference x) {
 
-            if(_outer_front_index == 0 && _inner_front_index == 0){
-                size_type force_size = _cap*2;
-                resize(force_size);
-                }
-
+            if(*_outer_absolute_s[0] == *_top[_outer_front_index]){
+                //were in here, that means we are at the very front, and we need to resize to push fornt
+                //call resize- im plementation alter
+            }
 
             _inner_front_index = _inner_front_index - 1;
             _top[_outer_front_index][_inner_front_index] = x;            
@@ -1263,109 +1258,6 @@ class my_deque {
             assert(valid());}
 
             */
-            iterator b= begin();   
-            iterator e=end();
-            iterator temp;
-
-
-            if (s == size())
-
-                return;
-
-            if(s<size()){
-
-                temp=destroy(_a, b+s, e);
-
-                //assign indices
-                //assign _outer_front_index
-                //assign _outer_back_index
-                //assign _inner_front_index
-                //assign _inner_back_index
-
-
-            }
-            else if(s<=_cap){
-
-                temp=uninitialized_fill(_a,e, b+s, v);
-                
-                //assign indices
-                //assign _outer_front_index
-                //assign _outer_back_index
-                //assign _inner_front_index
-                //assign _inner_back_index
-
-
-            }
-
-            //if size > cap
-            else{
-
-                pointer* _new_top;
-                pointer* _new_bot;
-
-                pointer* _old_top = _top;
-                pointer* _old_bot = _bot;
-
-                size_type _new_front_outer_index;
-                size_type _new_back_outer_index;
-
-                size_type _new_front_inner_index;
-                size_type _new_back_inner_index;
-
-                size_type _temp_old_front_outer_index = _outer_front_index;
-                size_type _temp_old_back_outer_inde = _outer_back_index;
-
-                size_type _temp_old_front_inner_index = _inner_front_index;
-                size_type _temp_old_back_inner_index = _inner_back_index;
-
-                //size_type old_data_size = _size;                                 //_size
-                size_type new_outer_size;
-                size_type offset = 0;
-                size_type new_cap;
-                size_type temp_outer_size=_outer_size;
-                new_outer_size = _outer_size * 2;
-
-                _new_top = _b.allocate(new_outer_size);                               //now we have the new outer array
-
-                size_type i = 0;
-                offset = _outer_size / 2;
-
-
-                while(i < offset){                                              //we allocated the first spots for room
-                    _new_top[i] = _a.alloate(ARRSIZE);  
-                    ++i;
-                }
-
-                std::copy(_old_top, _old_bot, _new_top+offset);                 //copies old data to our new data spots, and we end up at the first uninialized spot to allocate
-
-                i = i + _outer_size;                                     //this gives us the new index of where we wanna start
-
-                while( i < new_outer_size){                                       //this allocates the rest of the outer array
-                    _top[i] = _a.allocate(ARRSIZE);
-                    ++i;
-                }
-
-                //reassign the indices of OUTER ARRAY
-                _new_front_outer_index = _temp_old_front_outer_index + offset;
-                _new_back_outer_index = _temp_old_back_outer_inde + offset;
-
-
-                //ressign our temps to our globals
-                _top = _new_top;
-                _bot = _new_bot;
-
-                _outer_front_index = _new_front_outer_index;
-                _outer_back_index = _new_back_outer_index;
-
-                //the inner indices, dont change
-                _outer_size = new_outer_size;
-                _cap = _outer_size * ARRSIZE;
-
-                //_size doesnt change - since no data added
-
-                //destroy old outer array
-
-                _b.deallocate(_top,temp_outer_size-1);}
 
             assert(valid());}
 
