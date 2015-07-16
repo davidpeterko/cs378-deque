@@ -110,9 +110,8 @@ class my_deque {
          * <your documentation>
          */
         friend bool operator == (const my_deque& lhs, const my_deque& rhs) {
-            // <your code>
-            // you must use std::equal()
-            return true;}
+        
+                    return true;}
 
         // ----------
         // operator <
@@ -176,14 +175,13 @@ class my_deque {
                 return false;
             }
 
-            if(_inner_front_index > ARRSIZE){
+            if(_inner_front_index > (ARRSIZE - 1)){
                 return false;
             }
 
-            if(_outer_front_index > _outer_size){
+            if(_outer_front_index > (_outer_size - 1)){
                 return false;
             }
-
             
             return true;}
 
@@ -214,7 +212,13 @@ class my_deque {
                  * <your documentation>
                  */
                 friend bool operator == (const iterator& lhs, const iterator& rhs) {
-                    return lhs._it_location == rhs._it_location;}
+                    if (lhs.dq != rhs.dq)
+                        return false;
+                    if (lhs._front_inner_index != rhs._front_inner_index)
+                        return false;
+                    if (lhs._front_outer_index != rhs._front_outer_index)
+                        return false;
+                    return true;}
 
                 /**
                  * <your documentation>
@@ -247,13 +251,11 @@ class my_deque {
                 // data
                 // ----
                 
-                pointer* _outer_begin;
-                pointer _it_location;
-                pointer _end_of_data;
-                pointer _start_of_data;
-                size_type _room_left;
-                pointer _it_abs_s;
-                pointer _it_abs_e;
+                my_deque* dq;
+                size_type _front_outer_index;
+                size_type _front_inner_index;
+
+
 
             private:
                 // -----
@@ -261,8 +263,16 @@ class my_deque {
                 // -----
 
                 bool valid () const {
+ 
+                    if(_front_outer_index > dq->_outer_size){
+                        return false;
+                    }
 
-                    return (_outer_begin != 0);}
+                    if(_front_inner_index > ARRSIZE -1 ){
+                        return false;
+                    }
+
+                    return  true;}
 
             public:
                 // -----------
@@ -270,18 +280,19 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * iterator constructor
                  */
-                iterator (my_deque* dq) :
-                     //size_type i;
-                    _outer_begin(dq->_outer_begin),
-                    _it_location(dq->_inner_begin),
-                    _end_of_data(dq->_inner_end), 
-                    _start_of_data(dq-> _inner_begin),
-                    _it_abs_s(dq->_inner_absolute_s),
-                    _it_abs_e(dq->_inner_absolute_e){
+                iterator (my_deque* myd, size_type inner_index, size_type outer_index){
 
-                        _room_left = ARRSIZE - (_it_location) - 1;
+                    dq = myd;
+                    _front_inner_index = inner_index;
+                    _front_outer_index = outer_index;
+
+                    //we want _it_location to point at this location -> _top[f o][f i]
+
+                    //std::cout << "The value where our iterator is pointing to is: " << (dq + _front_inner_index) << std::endl;
+                    //std::cout << "the location of _it_location" << _it_location << std::endl;
+
 
                     assert(valid());}
 
@@ -298,7 +309,7 @@ class my_deque {
                  * grabs value at the iterator location
                  */
                 reference operator * () const {
-                    return *_it_location;}
+                    return dq->_top[_front_outer_index][_front_inner_index];}
 
                 // -----------
                 // operator ->
@@ -319,25 +330,23 @@ class my_deque {
                  */
                 iterator& operator ++ () {
 
-                    if(_it_location == _end_of_data){
-                        throw std::out_of_range("Trying to increment iterator past end of data.");
+                    this->_front_inner_index = this->_front_inner_index + 1;
+
+
+                    if(this->_front_inner_index > 19){
+                        this->_front_inner_index = 0;
+                        this->_front_outer_index = this->_front_outer_index + 1;
                     }
+                   
 
-
-                    if(_room_left == 0){
-
-                        _outer_begin =  _outer_begin + 1;
-                        _it_location = *_outer_begin;
-
-                        _room_left = 19;
-                        *this = _it_location;
-                    }
-                    else{
-                        _it_location = _it_location + 1;
-                        _room_left = _room_left - 1;
-                    }
+                   /// std::cout<<"dq->_top[0]: "<<dq->_top[0]<<std::endl;
+                    //std::cout<<"&(dq[_front_outer_index][_front_inner_index] "<<&(dq[_front_outer_index][_front_inner_index])<<std::endl;
                     
-                    
+                    // if (dq->_top[0]==&(dq[_front_outer_index][_front_inner_index])){
+                    //     throw std::out_of_range("No space has been allocated");
+                    // }
+                
+
                     assert(valid());
                     return *this;}
 
@@ -358,25 +367,15 @@ class my_deque {
                  * <your documentation>
                  */
                 iterator& operator -- () {
-                   
-                    if(_it_location == _start_of_data){
-                        throw std::out_of_range("Trying to decrement iterator past the start of data.");
+                 
+                    this->_front_inner_index = this->_front_inner_index - 1;
+
+                    if(this->_front_inner_index < 0){
+                        this->_front_inner_index = 19;
+                        this->_front_outer_index = this->_front_outer_index - 1;
                     }
+         
 
-
-                    if(_room_left == 19){
-
-                        _outer_begin =  _outer_begin - 1;
-                        _it_location = *_outer_begin+19;
-
-                        _room_left = 0;
-                        *this = _it_location;
-                    }
-                    else{
-                        _it_location = _it_location - 1;
-                        _room_left = _room_left + 1;
-                    }
-                    
                     assert(valid());
                     return *this;}
 
@@ -398,32 +397,16 @@ class my_deque {
                  */
                 iterator& operator += (difference_type d) {
 
-                    //d = positive o rnegative value
-
-                    while(d > 0){
-
-                        if(_it_location == _end_of_data){
-                            throw std::out_of_range("Trying to increment iterator past end of data.");
-                        }
+                     this->_front_inner_index = this->_front_inner_index + d;
 
 
-                        if(_room_left == 0){
-
-                            _outer_begin =  _outer_begin + 1;
-                            _it_location = *_outer_begin;
-
-                            _room_left = 19;
-                            *this = _it_location;
-                        }
-                        else{
-                            _it_location = _it_location + 1;
-                            _room_left = _room_left - 1;
-                        }
-
-
-
-                        --d;
+                    if(this->_front_inner_index >  19){
+                        difference_type temp= d/20;
+                        difference_type offset=d%20;
+                        this->_front_inner_index = offset;
+                        this->_front_outer_index = this->_front_outer_index + temp;
                     }
+
 
                     assert(valid());
                     return *this;}
@@ -436,31 +419,22 @@ class my_deque {
                  * <your documentation>
                  */
                 iterator& operator -= (difference_type d) {
+                this->_front_inner_index = this->_front_inner_index - d;
 
-                    while( d > 0){
 
-                        if(_it_location == _start_of_data){
-                            throw std::out_of_range("Trying to decrement iterator past the start of data.");
+                    if(this->_front_inner_index <  0){
+                        difference_type temp= d/20;
+                        difference_type offset=d%20;
+                        if(temp==0){
+                            temp=temp+1;
+                           while(_front_inner_index!=0){
+                            offset=offset-1;
+                            _front_inner_index=_front_inner_index-1;
+                           }
                         }
-
-
-                        if(_room_left == 19){
-
-                            _outer_begin =  _outer_begin - 1;
-                            _it_location = *_outer_begin+19;
-
-                            _room_left = 0;
-                            *this = _it_location;
-                        }
-                        else{
-                            _it_location = _it_location - 1;
-                            _room_left = _room_left + 1;
-                        }
-
-                        --d;
+                        this->_front_inner_index = ARRSIZE-offset;
+                        this->_front_outer_index = this->_front_outer_index - temp;
                     }
-
-
 
                     assert(valid());
                     return *this;}};
@@ -492,7 +466,7 @@ class my_deque {
                  */
                 friend bool operator == (const const_iterator& lhs, const const_iterator& rhs) {
 
-                    return lhs._it_location == rhs._it_location;}
+                    return *lhs == *rhs;}
 
                 /**
                  * <your documentation>
@@ -525,14 +499,6 @@ class my_deque {
                 // data
                 // ----
 
-                pointer* _outer_begin;
-                pointer _it_location;
-                pointer _end_of_data;
-                pointer _start_of_data;
-                size_type _room_left;
-                pointer _it_abs_s;
-                pointer _it_abs_e;
-
             private:
                 // -----
                 // valid
@@ -550,16 +516,10 @@ class my_deque {
                 /**
                  * <your documentation>
                  */
-                const_iterator (const my_deque dq) :
-                     //size_type i;
-                    _outer_begin(dq->_outer_begin),
-                    _it_location(dq->_inner_begin),
-                    _end_of_data(dq->_inner_end), 
-                    _start_of_data(dq-> _inner_begin),
-                    _it_abs_s(dq->_inner_absolute_s),
-                    _it_abs_e(dq->_inner_absolute_e){
+                const_iterator (){
 
-                        _room_left = ARRSIZE - (_it_location) - 1;
+
+            
 
                     assert(valid());}
 
@@ -577,7 +537,8 @@ class my_deque {
                  */
                 reference operator * () const {
 
-                    return *_it_location;}
+                    static value_type dummy;
+                    return dummy;}
 
                 // -----------
                 // operator ->
@@ -598,23 +559,7 @@ class my_deque {
                  */
                 const_iterator& operator ++ () {
                    
-                    if(_it_location == _end_of_data){
-                        //check ends and start
-                    }
 
-
-                    if(_room_left == 0){
-
-                        _outer_begin =  _outer_begin + 1;
-                        _it_location = *_outer_begin;
-
-                        _room_left = 19;
-                        *this = _it_location;
-                    }
-                    else{
-                        _it_location = _it_location + 1;
-                        _room_left = _room_left - 1;
-                    }
                     
                     assert(valid());
                     return *this;}
@@ -636,25 +581,7 @@ class my_deque {
                  * <your documentation>
                  */
                 const_iterator& operator -- () {
-                    
-                    if(_it_location == _start_of_data){
-                        //check it hits front;
-                    }
 
-
-                    if(_room_left == 19){
-
-                        _outer_begin =  _outer_begin - 1;
-                        _it_location = *_outer_begin+19;
-
-                        _room_left = 0;
-                        *this = _it_location;
-                    }
-                    else{
-                        _it_location = _it_location - 1;
-                        _room_left = _room_left + 1;
-                    }
-                    
                     assert(valid());
                     return *this;}
 
@@ -740,7 +667,6 @@ class my_deque {
                     num_row_count = s/ARRSIZE + 1;
                 }
 
-
                 _outer_size = (s/ARRSIZE) + 1;                   //get the outer array size
                 _outer_size = num_row_count;
 
@@ -754,7 +680,7 @@ class my_deque {
                     _top[i] = _a.allocate(ARRSIZE);
                 }
 
-               size_type start_index = 0;
+                size_type start_index = 0;
                 size_type remaining_values = s;
 
                 size_type last_index = _outer_size - 1;
@@ -809,6 +735,8 @@ class my_deque {
                 _outer_absolute_s = _top;
                 _outer_absolute_e = _top+num_row_count-1;
 
+                //outer absolute keeps track of the outer array CONCRETE end points
+
             
             assert(valid());}
 
@@ -829,6 +757,15 @@ class my_deque {
 
                 //reallocate outside space
                 _top = _b.allocate(_outer_size);
+
+                size_type offset;
+
+                offset = _size % ARRSIZE;
+
+                if(offset > 0){
+                    //do stuff?
+                    //the last row needs to be initialized partially?
+                }
 
                 //allocate and fill
                 for(int i = 0; i < _outer_size; ++i){
@@ -970,11 +907,11 @@ class my_deque {
 
             //check the reference out of bounds?
             if(temp_outer > _outer_size){
-                throw std::out_of_range("The access of the operator at is trying to access a spot that is not allocated or constructed.")
+                throw std::out_of_range("The access of the operator at is trying to access a spot that is not allocated or constructed.");
             }
 
             if(temp_inner > ARRSIZE){
-                throw std::out_of_range("The access of the operator at is trying to access a spot that is not allocated or constructed.")
+                throw std::out_of_range("The access of the operator at is trying to access a spot that is not allocated or constructed.");
             }
 
 
@@ -994,7 +931,18 @@ class my_deque {
          */
         reference back () {
 
-            return *(_inner_end - 1);}
+            size_type temp_back = _inner_back_index;
+
+            //we need to grab the preivous array, lat value, if our index is 0, sinc w can go into a negative reference
+
+            if(temp_back == 0){
+                //std::cout << " we are in the if, wre the indx should be 0 iof the preivous array " << std::endl;
+
+                return _top[_outer_back_index-1][_inner_back_index+19];
+            }
+
+
+            return _top[_outer_back_index][_inner_back_index-1];}
 
         /**
          * a const_reference use of back
@@ -1010,8 +958,7 @@ class my_deque {
          * calls a iterator to start at the beginning of the deque
          */
         iterator begin () {
-            // <your code>
-            return iterator(/* <your arguments> */);}
+            return iterator(this, _inner_front_index, _outer_front_index);}
 
         /**
          * <your documentation>
@@ -1050,8 +997,7 @@ class my_deque {
          * <your documentation>
          */
         iterator end () {
-            // <your code>
-            return iterator(/* <your arguments> */);}
+            return iterator(this, _inner_back_index, _outer_back_index);}
 
         /**
          * <your documentation>
@@ -1081,7 +1027,7 @@ class my_deque {
          */
         reference front () {
 
-            return *_inner_begin;}
+            return _top[_outer_front_index][_inner_front_index];}
 
         /**
          * a cosn reference return of the front value of the deque
@@ -1111,26 +1057,36 @@ class my_deque {
         void pop_back () {
 
             if(_size == 0){
-                return;
+                throw std::out_of_range("There is nothing to call pop_back() on.");
             }
 
             _size = _size - 1;
 
             //capacity doesnt change
 
-            //this index is the end of the inner array we are looking at so a value
-            //between 0-19
+            //std::cout << "This is _inner_end" << *_inner_end << std::endl;
+            //std::cout << "this is _inner_back_index " << _inner_back_index << std::endl;
+
+            //std::cout << "The BEFORE decrement _inner_back_index is " << _inner_back_index << std::endl;
+
+            //_inner_back_index = destroy(_a, _top[_outer_back_index]+_inner_back_index-1, _top[_outer_back_index]+_inner_back_index);
+
             _inner_back_index = _inner_back_index - 1;
 
+            //std::cout << "The _inner_back_index is NOW " << _inner_back_index << std::endl;
+            
             if(_inner_back_index < 0){
                 //means it was at the front fo the array, and is now needs to go back tot he previous array before above
 
                 _outer_back_index = _outer_front_index - 1;                 //so we decrement the OUTSIDE array index cause were going back u poen
                 _inner_back_index = ARRSIZE - 1;
+
+                //std::cout << "The _inner_back_index is IF it had to roll back is now " << _inner_back_index << std::endl;
+ 
             }
 
-            ASSERT_TRUE(_inner_back_index < 20);
-            ASSERT_TRUE(_outer_back_index < _outer_size);
+
+
 
             assert(valid());}
 
@@ -1138,7 +1094,20 @@ class my_deque {
          * <your documentation>
          */
         void pop_front () {
-            // <your code>
+
+            if(_size == 0){
+                throw std::out_of_range("There is nothing to call pop_front() on.");
+            }
+
+            _size = _size - 1;
+
+            _inner_front_index = _inner_front_index + 1;
+
+            if(_inner_front_index > 19){
+                _outer_front_index = _outer_front_index + 1;
+                _inner_front_index = 0;
+            }
+
             assert(valid());}
 
         // ----
@@ -1148,15 +1117,34 @@ class my_deque {
         /**
          * <your documentation>
          */
-        void push_back (const_reference) {
-            // <your code>
+        void push_back (const_reference x) {
+
+            //confidiotnals need to check to resize
+
+           _inner_back_index=_inner_back_index + 1;
+
+           _top[_outer_back_index][_inner_back_index - 1]=x;
+
+           _size  = _size + 1;
+
             assert(valid());}
 
         /**
          * <your documentation>
          */
-        void push_front (const_reference) {
-            // <your code>
+        void push_front (const_reference x) {
+
+            if(*_outer_absolute_s[0] == *_top[_outer_front_index]){
+                //were in here, that means we are at the very front, and we need to resize to push fornt
+                //call resize- im plementation alter
+            }
+
+            _inner_front_index = _inner_front_index - 1;
+            _top[_outer_front_index][_inner_front_index] = x;            
+
+
+            _size = _size + 1;
+
             assert(valid());}
 
         // ------
