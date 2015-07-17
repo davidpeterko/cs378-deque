@@ -913,7 +913,7 @@ class my_deque {
             else{
                 clear();
                 resize(rhs.size());
-
+                uninitialized_copy(_a, rhs.begin(), rhs.end(), begin());
             }
 
 
@@ -1353,7 +1353,7 @@ class my_deque {
 
                 offset = (_new_outer_size - _old_outer_size) / 2;                   //this should give us the front space we need to fill / offset
 
-                std::cout<<"the offset here is : " << offset << std::endl;
+                //std::cout<<"the offset here is : " << offset << std::endl;
 
                 if(offset == 0){
                     offset = offset + 1;
@@ -1366,7 +1366,7 @@ class my_deque {
                     _new_top[running_counter] = _a.allocate(ARRSIZE);
                     running_counter = running_counter + 1;
                 }
-            std::cout<<"the running counter here is : " << offset << std::endl;
+                //std::cout<<"the running counter here is : " << offset << std::endl;
 
 
                 //std::cout<<"Get herse before the std:;copy"<< std::endl;
@@ -1376,23 +1376,23 @@ class my_deque {
 
                 std::copy(_old_top, _old_bot, _new_top + offset);
 
-                std::cout<<"Get herse after the std:;copy"<< std::endl;
+                //std::cout<<"Get herse after the std:;copy"<< std::endl;
 
                 running_counter = running_counter + _old_outer_size;
 
-                std::cout << "the value of running counter after the copy: " << running_counter << std::endl;
-                std::cout<<"the new outer size : " << _new_outer_size << std::endl;
+                //std::cout << "the value of running counter after the copy: " << running_counter << std::endl;
+               // std::cout<<"the new outer size : " << _new_outer_size << std::endl;
 
                 while(running_counter < _new_outer_size){
                     _new_top[running_counter] = _a.allocate(ARRSIZE);
                     running_counter = running_counter + 1;
-                std::cout << "while loopsdfapssd: " << running_counter << std::endl;
+                //std::cout << "while loopsdfapssd: " << running_counter << std::endl;
 
                 }
 
-                std::cout << "now we broke out of the while loop"  << std::endl;
-                std::cout << "the value of running counter breaks out of while loop: " << running_counter << std::endl;
-                std::cout << "the value of offset:  " << offset << std::endl;
+                //std::cout << "now we broke out of the while loop"  << std::endl;
+                //std::cout << "the value of running counter breaks out of while loop: " << running_counter << std::endl;
+                //std::cout << "the value of offset:  " << offset << std::endl;
 
 
                 //reassign values
@@ -1400,7 +1400,7 @@ class my_deque {
                 _bot = _new_bot;
 
                 _outer_front_index = _temp_old_front_outer_index + offset;
-                _outer_back_index = _temp_old_back_outer_index + offset;
+                _outer_back_index = _temp_old_back_outer_index + offset + 1;
 
                 //inner indicies shouldnt move
 
@@ -1410,7 +1410,7 @@ class my_deque {
 
                 //deallocate
                 _b.deallocate(_old_top, _old_outer_size - 1);
-                std::cout<<"debugger debugger" << std::endl;
+                //std::cout<<"debugger debugger" << std::endl;
 
             }
             assert(valid());}
