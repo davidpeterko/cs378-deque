@@ -913,7 +913,7 @@ class my_deque {
             else{
                 clear();
                 resize(rhs.size());
-                uninitialized_copy(rhs.begin(), rhs.end(), begin());
+
             }
 
 
