@@ -885,6 +885,8 @@ class my_deque {
 
             //std::cout<<"finished deallocating outer array" << std::endl;
         
+            //commit msg
+
             assert(valid());}
 
         // ----------
