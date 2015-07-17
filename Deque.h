@@ -904,8 +904,10 @@ class my_deque {
             }
             else{
                 clear();
-                resize(rhs.size());
-                uninitialized_copy(_a, rhs.begin(), rhs.end(), begin());
+                my_deque temp(rhs);
+                swap(temp);
+                //uninitialized_copy(_a, rhs.begin() + size(), rhs.end(), end());
+
             }
 
 
