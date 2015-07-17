@@ -1,0 +1,107 @@
+commit c59bb4261cd6ceda1d65efa2fa31a1639152a853
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Thu Jul 16 19:24:05 2015 -0500
+
+    Added someone elses test form repo.
+
+commit bc303f72a6336b9b6d109547214c8acfe58cd420
+Author: Imran Masrur <imran@cs.utexas.edu>
+Date:   Thu Jul 16 19:15:13 2015 -0500
+
+    fixes #4, fixes #5, fixes #6, fixes #6, fixes #8
+
+commit 28b03cccf4d70cedc1b0d4cd7de4b1f75a13303a
+Author: david peter ko <davidpeterko@gmail.com>
+Date:   Thu Jul 16 19:08:35 2015 -0500
+
+    udpated tests with tests fo rall functoins
+
+commit 370aa005eef83d95a6f9ada693e77ff0f35eccaa
+Author: david peter ko <davidpeterko@gmail.com>
+Date:   Thu Jul 16 19:07:25 2015 -0500
+
+    fixed resize, and resolved issues 2-6
+
+commit 7a212f1d45c11322851ec1807e88eb4e9a5ca658
+Author: Imran Masrur <imran@cs.utexas.edu>
+Date:   Thu Jul 16 14:19:01 2015 -0500
+
+    resolves #3
+
+commit 5f526e385c917f81cd16202bb3515bfb87587098
+Author: david peter ko <davidpeterko@gmail.com>
+Date:   Thu Jul 16 00:57:55 2015 -0500
+
+    updated at night added th std::lexi
+
+commit 08391a3e482019026dc234fa8001237034a3fea0
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Thu Jul 16 00:31:54 2015 -0500
+
+    Added insert and 2 tests for it, one testing a singular array isnert, and then a mupltie array insert.
+
+commit e1966e769396e8cf88624030aded087fc571ba79
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Wed Jul 15 22:51:27 2015 -0500
+
+    Added erase, sort of worked on destructor.
+
+commit 398d48585f50975a3efef9e17f3fb05af1a834d0
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Wed Jul 15 22:20:56 2015 -0500
+
+    fixes #2
+
+commit f303d7929b8e87f33993dc239f41133d104af1af
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Wed Jul 15 21:34:13 2015 -0500
+
+    fixes #1
+
+commit 846b4c1bad8977e020462ca0a5a7bc70fd99cf59
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Wed Jul 15 20:46:35 2015 -0500
+
+    Added alot of etstes a,d fixed some bugs. The only things we need to implement are const iterators, push and resize swap
+
+commit a935c5caf79ae8155dfd75804f7b115786684dea
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Wed Jul 15 13:35:02 2015 -0500
+
+    Added pop back
+
+commit b6ea3f88a9df43afeadd2af4462f1913bda7fd17
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Wed Jul 15 13:22:47 2015 -0500
+
+    added new tests, subscript, constructor and copy constuctor work
+
+commit d5b52dfb9da2e714cf7bffb8d9a2d9843f31ee22
+Author: david ko <davidpeterko@gmail.com>
+Date:   Wed Jul 15 13:23:33 2015 -0500
+
+    redid constructor logic
+
+commit 319d51f92f4921f7983a9aab3419ec90feb0c25b
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Wed Jul 15 00:17:12 2015 -0500
+
+    added
+
+commit 846c0c745711a602136d5e28e9edda7cdea4ec08
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Wed Jul 15 00:15:48 2015 -0500
+
+    added
+
+commit 914dc6938d9bbcfe489cf3e27067fee61ab43cf0
+Author: david ko <davidpeterko@gmail.com>
+Date:   Sun Jul 12 16:22:01 2015 -0500
+
+    Added .travis.yml file
+
+commit 5dd4f6437d81de15db7bcd5259faf8f81061bd2e
+Author: david ko <davidpeterko@gmail.com>
+Date:   Sat Jul 11 13:05:20 2015 -0500
+
+    Added starter files, will ad ev-branch after

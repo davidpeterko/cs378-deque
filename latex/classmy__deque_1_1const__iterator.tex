@@ -1,0 +1,215 @@
+\hypertarget{classmy__deque_1_1const__iterator}{\section{my\-\_\-deque$<$ T, A $>$\-:\-:const\-\_\-iterator Class Reference}
+\label{classmy__deque_1_1const__iterator}\index{my\-\_\-deque$<$ T, A $>$\-::const\-\_\-iterator@{my\-\_\-deque$<$ T, A $>$\-::const\-\_\-iterator}}
+}
+
+
+{\ttfamily \#include $<$Deque.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+std\-::bidirectional\-\_\-iterator\-\_\-tag \hyperlink{classmy__deque_1_1const__iterator_a1a84b424e091e49a4af1c13a38621252}{iterator\-\_\-category}
+\item 
+typedef \hyperlink{classmy__deque_ae9c156c405acc57623a4601ce755596f}{my\-\_\-deque\-::value\-\_\-type} \hyperlink{classmy__deque_1_1const__iterator_adc8d08cb0b0a1dcb50323ba5ab8fdecb}{value\-\_\-type}
+\item 
+typedef \hyperlink{classmy__deque_ac85676cb2492fbc9bbc6f1a30e9d3c73}{my\-\_\-deque\-::difference\-\_\-type} \hyperlink{classmy__deque_1_1const__iterator_abe3b655aa980c8a12ba486058464c91d}{difference\-\_\-type}
+\item 
+typedef \hyperlink{classmy__deque_a8fea5edeb2b2cf3dd1246dc3abf9b71b}{my\-\_\-deque\-::const\-\_\-pointer} \hyperlink{classmy__deque_1_1const__iterator_a6a7d42610f3b7e55f38897c151862071}{pointer}
+\item 
+typedef \hyperlink{classmy__deque_ad50d8b378580088cf77fa43f0640e49c}{my\-\_\-deque\-::const\-\_\-reference} \hyperlink{classmy__deque_1_1const__iterator_a37cd7eef8e73e5a65d7a9d16ba6d3ed2}{reference}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmy__deque_1_1const__iterator_acb5c43fe768d891ea54d4efb235acb03}{const\-\_\-iterator} (const \hyperlink{classmy__deque}{my\-\_\-deque} $\ast$myd, \hyperlink{classmy__deque_a61e5e5317fe72a381ce4d45f09544b02}{size\-\_\-type} inner\-\_\-index, \hyperlink{classmy__deque_a61e5e5317fe72a381ce4d45f09544b02}{size\-\_\-type} outer\-\_\-index)
+\item 
+\hyperlink{classmy__deque_1_1const__iterator_a37cd7eef8e73e5a65d7a9d16ba6d3ed2}{reference} \hyperlink{classmy__deque_1_1const__iterator_a14715989004b54dc6a1bcd3d2ac78a20}{operator$\ast$} () const 
+\item 
+\hyperlink{classmy__deque_1_1const__iterator_a6a7d42610f3b7e55f38897c151862071}{pointer} \hyperlink{classmy__deque_1_1const__iterator_aef7e08cfcebb0c0932422f420645e1ce}{operator-\/$>$} () const 
+\item 
+\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \& \hyperlink{classmy__deque_1_1const__iterator_a8bc45a394bb73728fca1ebf90755d662}{operator++} ()
+\item 
+\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \hyperlink{classmy__deque_1_1const__iterator_adf9ea902391ac993088e7c969c64e4de}{operator++} (int)
+\item 
+\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \& \hyperlink{classmy__deque_1_1const__iterator_ae5dffda4ac0a8ad59a4954dcdeeb5f98}{operator-\/-\/} ()
+\item 
+\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \hyperlink{classmy__deque_1_1const__iterator_a83c405a1e0b9672c074aaa933a7127df}{operator-\/-\/} (int)
+\item 
+\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \& \hyperlink{classmy__deque_1_1const__iterator_a2bbc121cc446855edcb9d20451cae024}{operator+=} (\hyperlink{classmy__deque_1_1const__iterator_abe3b655aa980c8a12ba486058464c91d}{difference\-\_\-type} d)
+\item 
+\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \& \hyperlink{classmy__deque_1_1const__iterator_ab51576a76fd33fd55be87ca4c467dc96}{operator-\/=} (\hyperlink{classmy__deque_1_1const__iterator_abe3b655aa980c8a12ba486058464c91d}{difference\-\_\-type} d)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classmy__deque_1_1const__iterator_ab233485f07a0be8dbc1b41987cc1af42}{valid} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classmy__deque}{my\-\_\-deque} $\ast$ \hyperlink{classmy__deque_1_1const__iterator_a9208064ba233965d385cda00a7410e2c}{dq}
+\item 
+\hyperlink{classmy__deque_a61e5e5317fe72a381ce4d45f09544b02}{size\-\_\-type} \hyperlink{classmy__deque_1_1const__iterator_a647322a455844b9a2cdc0fd93290b35a}{\-\_\-front\-\_\-inner\-\_\-index}
+\item 
+\hyperlink{classmy__deque_a61e5e5317fe72a381ce4d45f09544b02}{size\-\_\-type} \hyperlink{classmy__deque_1_1const__iterator_a8d175fd85f28e6628334f2b1eb12b815}{\-\_\-front\-\_\-outer\-\_\-index}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classmy__deque_1_1const__iterator_a772a728ee48f5cb8904aaae842b0eb82}{operator==} (const \hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \&lhs, const \hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \&rhs)
+\item 
+bool \hyperlink{classmy__deque_1_1const__iterator_a12d66edf831aeec4957931d7f7945d90}{operator!=} (const \hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \&lhs, const \hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \&rhs)
+\item 
+\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \hyperlink{classmy__deque_1_1const__iterator_ab6ce7b11eff6ef34762c30e4e96a86a0}{operator+} (\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} lhs, \hyperlink{classmy__deque_1_1const__iterator_abe3b655aa980c8a12ba486058464c91d}{difference\-\_\-type} rhs)
+\item 
+\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} \hyperlink{classmy__deque_1_1const__iterator_a41934331896eac6321161ff28c21fb29}{operator-\/} (\hyperlink{classmy__deque_1_1const__iterator}{const\-\_\-iterator} lhs, \hyperlink{classmy__deque_1_1const__iterator_abe3b655aa980c8a12ba486058464c91d}{difference\-\_\-type} rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classmy__deque_1_1const__iterator_abe3b655aa980c8a12ba486058464c91d}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!difference\-\_\-type@{difference\-\_\-type}}
+\index{difference\-\_\-type@{difference\-\_\-type}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{difference\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ typedef {\bf my\-\_\-deque\-::difference\-\_\-type} {\bf my\-\_\-deque}$<$ T, A $>$\-::{\bf const\-\_\-iterator\-::difference\-\_\-type}}}\label{classmy__deque_1_1const__iterator_abe3b655aa980c8a12ba486058464c91d}
+\hypertarget{classmy__deque_1_1const__iterator_a1a84b424e091e49a4af1c13a38621252}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!iterator\-\_\-category@{iterator\-\_\-category}}
+\index{iterator\-\_\-category@{iterator\-\_\-category}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{iterator\-\_\-category}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ typedef std\-::bidirectional\-\_\-iterator\-\_\-tag {\bf my\-\_\-deque}$<$ T, A $>$\-::{\bf const\-\_\-iterator\-::iterator\-\_\-category}}}\label{classmy__deque_1_1const__iterator_a1a84b424e091e49a4af1c13a38621252}
+\hypertarget{classmy__deque_1_1const__iterator_a6a7d42610f3b7e55f38897c151862071}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!pointer@{pointer}}
+\index{pointer@{pointer}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{pointer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ typedef {\bf my\-\_\-deque\-::const\-\_\-pointer} {\bf my\-\_\-deque}$<$ T, A $>$\-::{\bf const\-\_\-iterator\-::pointer}}}\label{classmy__deque_1_1const__iterator_a6a7d42610f3b7e55f38897c151862071}
+\hypertarget{classmy__deque_1_1const__iterator_a37cd7eef8e73e5a65d7a9d16ba6d3ed2}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!reference@{reference}}
+\index{reference@{reference}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{reference}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ typedef {\bf my\-\_\-deque\-::const\-\_\-reference} {\bf my\-\_\-deque}$<$ T, A $>$\-::{\bf const\-\_\-iterator\-::reference}}}\label{classmy__deque_1_1const__iterator_a37cd7eef8e73e5a65d7a9d16ba6d3ed2}
+\hypertarget{classmy__deque_1_1const__iterator_adc8d08cb0b0a1dcb50323ba5ab8fdecb}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ typedef {\bf my\-\_\-deque\-::value\-\_\-type} {\bf my\-\_\-deque}$<$ T, A $>$\-::{\bf const\-\_\-iterator\-::value\-\_\-type}}}\label{classmy__deque_1_1const__iterator_adc8d08cb0b0a1dcb50323ba5ab8fdecb}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmy__deque_1_1const__iterator_acb5c43fe768d891ea54d4efb235acb03}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!const\-\_\-iterator@{const\-\_\-iterator}}
+\index{const\-\_\-iterator@{const\-\_\-iterator}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{const\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::const\-\_\-iterator (
+\begin{DoxyParamCaption}
+\item[{const {\bf my\-\_\-deque} $\ast$}]{myd, }
+\item[{{\bf size\-\_\-type}}]{inner\-\_\-index, }
+\item[{{\bf size\-\_\-type}}]{outer\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_acb5c43fe768d891ea54d4efb235acb03}
+cosnt iterator contrsuctor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmy__deque_1_1const__iterator_a14715989004b54dc6a1bcd3d2ac78a20}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf reference} {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_a14715989004b54dc6a1bcd3d2ac78a20}
+const iterator $\ast$ operator \hypertarget{classmy__deque_1_1const__iterator_a8bc45a394bb73728fca1ebf90755d662}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf const\-\_\-iterator}\& {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_a8bc45a394bb73728fca1ebf90755d662}
+cosnt iterator increment pre std\-::cout$<$$<$\char`\"{}dq-\/$>$\-\_\-top\mbox{[}0\mbox{]}\-: \char`\"{}$<$$<$dq-\/$>$\-\_\-top\mbox{[}0\mbox{]}$<$$<$std\-::endl; \hypertarget{classmy__deque_1_1const__iterator_adf9ea902391ac993088e7c969c64e4de}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf const\-\_\-iterator} {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_adf9ea902391ac993088e7c969c64e4de}
+const iterator increment post \hypertarget{classmy__deque_1_1const__iterator_a2bbc121cc446855edcb9d20451cae024}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf const\-\_\-iterator}\& {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf difference\-\_\-type}}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_a2bbc121cc446855edcb9d20451cae024}
+csont iterator operation += \hypertarget{classmy__deque_1_1const__iterator_ae5dffda4ac0a8ad59a4954dcdeeb5f98}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf const\-\_\-iterator}\& {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_ae5dffda4ac0a8ad59a4954dcdeeb5f98}
+const iterator decrement, pre \hypertarget{classmy__deque_1_1const__iterator_a83c405a1e0b9672c074aaa933a7127df}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf const\-\_\-iterator} {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_a83c405a1e0b9672c074aaa933a7127df}
+cost iterator decrement, post \hypertarget{classmy__deque_1_1const__iterator_ab51576a76fd33fd55be87ca4c467dc96}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf const\-\_\-iterator}\& {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf difference\-\_\-type}}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_ab51576a76fd33fd55be87ca4c467dc96}
+const iterator operation -\/= \hypertarget{classmy__deque_1_1const__iterator_aef7e08cfcebb0c0932422f420645e1ce}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf pointer} {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmy__deque_1_1const__iterator_aef7e08cfcebb0c0932422f420645e1ce}
+const iterator value \hypertarget{classmy__deque_1_1const__iterator_ab233485f07a0be8dbc1b41987cc1af42}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!valid@{valid}}
+\index{valid@{valid}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ bool {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classmy__deque_1_1const__iterator_ab233485f07a0be8dbc1b41987cc1af42}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classmy__deque_1_1const__iterator_a12d66edf831aeec4957931d7f7945d90}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf const\-\_\-iterator} \&}]{lhs, }
+\item[{const {\bf const\-\_\-iterator} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classmy__deque_1_1const__iterator_a12d66edf831aeec4957931d7f7945d90}
+$<$your documentation$>$=\char`\"{}\char`\"{}$>$ \hypertarget{classmy__deque_1_1const__iterator_ab6ce7b11eff6ef34762c30e4e96a86a0}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator+@{operator+}}
+\index{operator+@{operator+}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf const\-\_\-iterator} operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-iterator}}]{lhs, }
+\item[{{\bf difference\-\_\-type}}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classmy__deque_1_1const__iterator_ab6ce7b11eff6ef34762c30e4e96a86a0}
+$<$your documentation$>$=\char`\"{}\char`\"{}$>$ \hypertarget{classmy__deque_1_1const__iterator_a41934331896eac6321161ff28c21fb29}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf const\-\_\-iterator} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-iterator}}]{lhs, }
+\item[{{\bf difference\-\_\-type}}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classmy__deque_1_1const__iterator_a41934331896eac6321161ff28c21fb29}
+$<$your documentation$>$=\char`\"{}\char`\"{}$>$ \hypertarget{classmy__deque_1_1const__iterator_a772a728ee48f5cb8904aaae842b0eb82}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf const\-\_\-iterator} \&}]{lhs, }
+\item[{const {\bf const\-\_\-iterator} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classmy__deque_1_1const__iterator_a772a728ee48f5cb8904aaae842b0eb82}
+$<$your documentation$>$=\char`\"{}\char`\"{}$>$ 
+
+\subsection{Member Data Documentation}
+\hypertarget{classmy__deque_1_1const__iterator_a647322a455844b9a2cdc0fd93290b35a}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!\-\_\-front\-\_\-inner\-\_\-index@{\-\_\-front\-\_\-inner\-\_\-index}}
+\index{\-\_\-front\-\_\-inner\-\_\-index@{\-\_\-front\-\_\-inner\-\_\-index}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{\-\_\-front\-\_\-inner\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf size\-\_\-type} {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::\-\_\-front\-\_\-inner\-\_\-index\hspace{0.3cm}{\ttfamily [private]}}}\label{classmy__deque_1_1const__iterator_a647322a455844b9a2cdc0fd93290b35a}
+\hypertarget{classmy__deque_1_1const__iterator_a8d175fd85f28e6628334f2b1eb12b815}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!\-\_\-front\-\_\-outer\-\_\-index@{\-\_\-front\-\_\-outer\-\_\-index}}
+\index{\-\_\-front\-\_\-outer\-\_\-index@{\-\_\-front\-\_\-outer\-\_\-index}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{\-\_\-front\-\_\-outer\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ {\bf size\-\_\-type} {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::\-\_\-front\-\_\-outer\-\_\-index\hspace{0.3cm}{\ttfamily [private]}}}\label{classmy__deque_1_1const__iterator_a8d175fd85f28e6628334f2b1eb12b815}
+\hypertarget{classmy__deque_1_1const__iterator_a9208064ba233965d385cda00a7410e2c}{\index{my\-\_\-deque\-::const\-\_\-iterator@{my\-\_\-deque\-::const\-\_\-iterator}!dq@{dq}}
+\index{dq@{dq}!my_deque::const_iterator@{my\-\_\-deque\-::const\-\_\-iterator}}
+\subsubsection[{dq}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename A  = std\-::allocator$<$\-T$>$$>$ const {\bf my\-\_\-deque}$\ast$ {\bf my\-\_\-deque}$<$ T, A $>$\-::const\-\_\-iterator\-::dq\hspace{0.3cm}{\ttfamily [private]}}}\label{classmy__deque_1_1const__iterator_a9208064ba233965d385cda00a7410e2c}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Deque_8h}{Deque.\-h}\end{DoxyCompactItemize}

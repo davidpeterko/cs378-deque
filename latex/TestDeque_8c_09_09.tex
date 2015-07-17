@@ -1,0 +1,721 @@
+\hypertarget{TestDeque_8c_09_09}{\section{Test\-Deque.\-c++ File Reference}
+\label{TestDeque_8c_09_09}\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}}
+}
+{\ttfamily \#include $<$deque$>$}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}gtest/gtest.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Deque.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture$<$ T $>$}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Types$<$ deque$<$ int $>$\\*
+, \hyperlink{classmy__deque}{my\-\_\-deque}$<$ int $>$ $>$ \hyperlink{TestDeque_8c_09_09_ad1999e4b3126317baa06a1266daa323c}{deque\-\_\-types}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{TestDeque_8c_09_09_a79c5f0d583b012a972111954cd22db81}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, \hyperlink{TestDeque_8c_09_09_ad1999e4b3126317baa06a1266daa323c}{deque\-\_\-types})
+\item 
+\hyperlink{TestDeque_8c_09_09_a2729a50d5ca3edae9f1725a4263c7270}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, test\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a26339ed26d7eb2947b2be93dcb24d176}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, constructor1)
+\item 
+\hyperlink{TestDeque_8c_09_09_aa7bd41496de6d96a05b95de28e9dbbc1}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, constructor2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a15aad0122e5f1338270ab7ab89f4c25b}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, constructor3)
+\item 
+\hyperlink{TestDeque_8c_09_09_aecae786b0d773297b0e13281bce87232}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, constructor4)
+\item 
+\hyperlink{TestDeque_8c_09_09_a6e6bc84645a0b2a1bace57c272522667}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, copyconstr1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a26191af0460fe503be8600cc00ea9b0d}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, copyconstr2)
+\item 
+\hyperlink{TestDeque_8c_09_09_ac3c4f0997cd77bfe9fe776df06883cbc}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, copyconstr3)
+\item 
+\hyperlink{TestDeque_8c_09_09_aaa017fb165eb9e7b5433d8cce98fa9b3}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, subscript1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a5dc55b8254cc03c6a6d85b0d919d5ded}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, subscript2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a3af7a806be711791d3ad731407132330}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, subscript3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a6c922f317d5643a792e426fb31e194b8}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, pop\-\_\-back1)
+\item 
+\hyperlink{TestDeque_8c_09_09_aafbac799df8a2cd5094918a04a17fd0a}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, pop\-\_\-back2)
+\item 
+\hyperlink{TestDeque_8c_09_09_af18daedad20e200dfe5c69ef95e23128}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, pop\-\_\-back3)
+\item 
+\hyperlink{TestDeque_8c_09_09_ad8dfd25f1d8b2d0ab81c4f32c2818906}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, pop\-\_\-back4)
+\item 
+\hyperlink{TestDeque_8c_09_09_a0e3fc12d3d521308fc163eeb9ea024f9}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, pop\-\_\-back5)
+\item 
+\hyperlink{TestDeque_8c_09_09_a1a4c71d68523f7b50fb1af25be06e187}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, pop\-\_\-front1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a542b768ad041411b3b19e119b9916bb0}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, pop\-\_\-front2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a41a27ceba46d7eb4976c8f61476944ff}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, pop\-\_\-front3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a9d4e3d253b263a333de110423330a0b9}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, back1)
+\item 
+\hyperlink{TestDeque_8c_09_09_aab135fe27aaf97bfad07c42eabd8dcf1}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, back2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a95fbfa5886394fc18276c276ca9baa6e}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, back3)
+\item 
+\hyperlink{TestDeque_8c_09_09_aa7a66bff0e053d143931e4fcf0b728a5}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, back4)
+\item 
+\hyperlink{TestDeque_8c_09_09_a692ef29abc0183e414fb1cdee72e43df}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, front1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a2ec93adeb6d3a487578c51adfd8e665d}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, front2)
+\item 
+\hyperlink{TestDeque_8c_09_09_aeebb95c37396f252a179ab73ba3b8158}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, front3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a2b84053d655ab7f53dd526f3dbf16515}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, front4)
+\item 
+\hyperlink{TestDeque_8c_09_09_adec6c366075acae4d41a8060d36b0c24}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, push\-\_\-back1)
+\item 
+\hyperlink{TestDeque_8c_09_09_ae9bdb57a6cb92a5186fdb1ccdc0ddbf4}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, push\-\_\-front1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a08ecc05f20a8b7f0409a05b2bc747c7e}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, inc\-\_\-test\-\_\-iterator\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a5c69931f40291e4cb4524688cdb5e975}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, inc\-\_\-test\-\_\-iterator\-\_\-2)
+\item 
+\hyperlink{TestDeque_8c_09_09_af56b0c263cd1c83a98415d5ddea43d5f}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, inc\-\_\-test\-\_\-iterator\-\_\-3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a217d38c5fbc4d8b7560ba447a34d4aa6}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, dec\-\_\-test\-\_\-iterator\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_aa4b42056769d5df6d3f47d51fc280ca1}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, dec\-\_\-test\-\_\-iterator\-\_\-2)
+\item 
+\hyperlink{TestDeque_8c_09_09_ad7ff570134f28345b6e5014c42e2289b}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, dec\-\_\-test\-\_\-iterator\-\_\-3)
+\item 
+\hyperlink{TestDeque_8c_09_09_ab5366bd0412588be304c640551cbc2d6}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, plus\-\_\-equal\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_ab0935d9b78b4aa03bd5da24d70dc4e48}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, plus\-\_\-equal\-\_\-2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a1d1bb53710df471125536d99d5465853}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, plus\-\_\-equal\-\_\-3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a65fbb7b9c47ce6ee678fa81a97c16f06}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, minus\-\_\-equal\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a063ec813b1bae74d7a6a1092a8957be8}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, minus\-\_\-equal\-\_\-2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a8d0974a3715ce0afd06a5fd9eae85209}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, minus\-\_\-equal\-\_\-3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a6ba613c7a563f0284a5c3028f92d014d}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, inc\-\_\-test\-\_\-const\-\_\-iterator\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a6c9e5b621116aa955e99e10f2514dd17}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, inc\-\_\-test\-\_\-const\-\_\-iterator\-\_\-2)
+\item 
+\hyperlink{TestDeque_8c_09_09_aab01341c67e34fdf9f52bafedd507fd4}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, inc\-\_\-test\-\_\-const\-\_\-iterator\-\_\-3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a30f673b5afb71d4a3cd73ae221b1c74a}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, dec\-\_\-test\-\_\-const\-\_\-iterator\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a658cfacace7099cca16cb18c43ac08fe}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, dec\-\_\-test\-\_\-const\-\_\-iterator\-\_\-2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a64c4ba1e33b218f7248e0503d2052995}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, const\-\_\-iterator\-\_\-plus\-\_\-equal\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a3e2aa1da2651f015562b199f90a1fb1e}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, const\-\_\-iterator\-\_\-plus\-\_\-equal\-\_\-2)
+\item 
+\hyperlink{TestDeque_8c_09_09_ab43c0fe733ccae927c0c3cea394ddceb}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, const\-\_\-iterator\-\_\-plus\-\_\-equal\-\_\-3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a3b4d1cd94116a45762c46a0f1201e177}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, const\-\_\-iterator\-\_\-minus\-\_\-equal\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a549e2b635cc5236fc4bb149ac6f3c945}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, const\-\_\-iterator\-\_\-minus\-\_\-equal\-\_\-2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a5c820c69c17a5759e12299ea785c6e38}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, const\-\_\-iterator\-\_\-minus\-\_\-equal\-\_\-3)
+\item 
+\hyperlink{TestDeque_8c_09_09_aa038f11955cae1bf169957db1e393406}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, erase1)
+\item 
+\hyperlink{TestDeque_8c_09_09_affafc6dd2ab8d3e3d920f19e8dfd2f8e}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, erase2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a3fe97f1291ac267dc0b92d75b13ce096}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, erase3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a26c27ef1c10114fd15865ed1927822f1}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, insert1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a676ec9c42ee6abfbc5da61168a2b4a8c}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, insert2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a4861cc7f4f1f2d8f90680487f8e4b6f4}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, resize1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a4d1fd20f778de0be625788465b7ecbd3}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, resize2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a43548d16dcb856e44d30ad9ebcefaa4f}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, resize3)
+\item 
+\hyperlink{TestDeque_8c_09_09_acef2b2b2ad033d418caca9d07a45c1ad}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, resize4)
+\item 
+\hyperlink{TestDeque_8c_09_09_a7db3e26540c8318a0c8e063def7848e7}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, resize5)
+\item 
+\hyperlink{TestDeque_8c_09_09_a636409bc2080e5b006d757a2e4959a3e}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, resize6)
+\item 
+\hyperlink{TestDeque_8c_09_09_a49393b148b2133863b6fd116f00868e7}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, resize\-\_\-test\-\_\-1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a75192a56be259b8bfb3b690f41015ac7}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, resize\-\_\-test\-\_\-3)
+\item 
+\hyperlink{TestDeque_8c_09_09_a215253ea5c0cb1afcad6943cf7788c3e}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, swap1)
+\item 
+\hyperlink{TestDeque_8c_09_09_a899eb9ffe534295b28b0c274572def9e}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, swap2)
+\item 
+\hyperlink{TestDeque_8c_09_09_a7c7c3c95a8e8dede9f3e3e4e5edb8cc5}{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{structDeque__Fixture}{Deque\-\_\-\-Fixture}, swap3)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{TestDeque_8c_09_09_ad1999e4b3126317baa06a1266daa323c}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!deque\-\_\-types@{deque\-\_\-types}}
+\index{deque\-\_\-types@{deque\-\_\-types}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{deque\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}typedef Types$<$ deque$<$int$>$, {\bf my\-\_\-deque}$<$int$>$ $>$ {\bf deque\-\_\-types}}}\label{TestDeque_8c_09_09_ad1999e4b3126317baa06a1266daa323c}
+
+
+\subsection{Function Documentation}
+\hypertarget{TestDeque_8c_09_09_a2729a50d5ca3edae9f1725a4263c7270}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{test\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a2729a50d5ca3edae9f1725a4263c7270}
+\hypertarget{TestDeque_8c_09_09_a26339ed26d7eb2947b2be93dcb24d176}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{constructor1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a26339ed26d7eb2947b2be93dcb24d176}
+\hypertarget{TestDeque_8c_09_09_aa7bd41496de6d96a05b95de28e9dbbc1}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{constructor2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aa7bd41496de6d96a05b95de28e9dbbc1}
+\hypertarget{TestDeque_8c_09_09_a15aad0122e5f1338270ab7ab89f4c25b}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{constructor3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a15aad0122e5f1338270ab7ab89f4c25b}
+\hypertarget{TestDeque_8c_09_09_aecae786b0d773297b0e13281bce87232}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{constructor4}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aecae786b0d773297b0e13281bce87232}
+\hypertarget{TestDeque_8c_09_09_a6e6bc84645a0b2a1bace57c272522667}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{copyconstr1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a6e6bc84645a0b2a1bace57c272522667}
+\hypertarget{TestDeque_8c_09_09_a26191af0460fe503be8600cc00ea9b0d}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{copyconstr2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a26191af0460fe503be8600cc00ea9b0d}
+\hypertarget{TestDeque_8c_09_09_ac3c4f0997cd77bfe9fe776df06883cbc}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{copyconstr3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_ac3c4f0997cd77bfe9fe776df06883cbc}
+\hypertarget{TestDeque_8c_09_09_aaa017fb165eb9e7b5433d8cce98fa9b3}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{subscript1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aaa017fb165eb9e7b5433d8cce98fa9b3}
+\hypertarget{TestDeque_8c_09_09_a5dc55b8254cc03c6a6d85b0d919d5ded}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{subscript2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a5dc55b8254cc03c6a6d85b0d919d5ded}
+\hypertarget{TestDeque_8c_09_09_a3af7a806be711791d3ad731407132330}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{subscript3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a3af7a806be711791d3ad731407132330}
+\hypertarget{TestDeque_8c_09_09_a6c922f317d5643a792e426fb31e194b8}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{pop\-\_\-back1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a6c922f317d5643a792e426fb31e194b8}
+\hypertarget{TestDeque_8c_09_09_aafbac799df8a2cd5094918a04a17fd0a}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{pop\-\_\-back2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aafbac799df8a2cd5094918a04a17fd0a}
+\hypertarget{TestDeque_8c_09_09_af18daedad20e200dfe5c69ef95e23128}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{pop\-\_\-back3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_af18daedad20e200dfe5c69ef95e23128}
+\hypertarget{TestDeque_8c_09_09_ad8dfd25f1d8b2d0ab81c4f32c2818906}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{pop\-\_\-back4}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_ad8dfd25f1d8b2d0ab81c4f32c2818906}
+\hypertarget{TestDeque_8c_09_09_a0e3fc12d3d521308fc163eeb9ea024f9}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{pop\-\_\-back5}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a0e3fc12d3d521308fc163eeb9ea024f9}
+\hypertarget{TestDeque_8c_09_09_a1a4c71d68523f7b50fb1af25be06e187}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{pop\-\_\-front1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a1a4c71d68523f7b50fb1af25be06e187}
+\hypertarget{TestDeque_8c_09_09_a542b768ad041411b3b19e119b9916bb0}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{pop\-\_\-front2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a542b768ad041411b3b19e119b9916bb0}
+\hypertarget{TestDeque_8c_09_09_a41a27ceba46d7eb4976c8f61476944ff}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{pop\-\_\-front3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a41a27ceba46d7eb4976c8f61476944ff}
+\hypertarget{TestDeque_8c_09_09_a9d4e3d253b263a333de110423330a0b9}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{back1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a9d4e3d253b263a333de110423330a0b9}
+\hypertarget{TestDeque_8c_09_09_aab135fe27aaf97bfad07c42eabd8dcf1}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{back2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aab135fe27aaf97bfad07c42eabd8dcf1}
+\hypertarget{TestDeque_8c_09_09_a95fbfa5886394fc18276c276ca9baa6e}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{back3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a95fbfa5886394fc18276c276ca9baa6e}
+\hypertarget{TestDeque_8c_09_09_aa7a66bff0e053d143931e4fcf0b728a5}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{back4}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aa7a66bff0e053d143931e4fcf0b728a5}
+\hypertarget{TestDeque_8c_09_09_a692ef29abc0183e414fb1cdee72e43df}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{front1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a692ef29abc0183e414fb1cdee72e43df}
+\hypertarget{TestDeque_8c_09_09_a2ec93adeb6d3a487578c51adfd8e665d}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{front2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a2ec93adeb6d3a487578c51adfd8e665d}
+\hypertarget{TestDeque_8c_09_09_aeebb95c37396f252a179ab73ba3b8158}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{front3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aeebb95c37396f252a179ab73ba3b8158}
+\hypertarget{TestDeque_8c_09_09_a2b84053d655ab7f53dd526f3dbf16515}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{front4}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a2b84053d655ab7f53dd526f3dbf16515}
+\hypertarget{TestDeque_8c_09_09_adec6c366075acae4d41a8060d36b0c24}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{push\-\_\-back1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_adec6c366075acae4d41a8060d36b0c24}
+\hypertarget{TestDeque_8c_09_09_ae9bdb57a6cb92a5186fdb1ccdc0ddbf4}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{push\-\_\-front1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_ae9bdb57a6cb92a5186fdb1ccdc0ddbf4}
+\hypertarget{TestDeque_8c_09_09_a08ecc05f20a8b7f0409a05b2bc747c7e}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{inc\-\_\-test\-\_\-iterator\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a08ecc05f20a8b7f0409a05b2bc747c7e}
+\hypertarget{TestDeque_8c_09_09_a5c69931f40291e4cb4524688cdb5e975}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{inc\-\_\-test\-\_\-iterator\-\_\-2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a5c69931f40291e4cb4524688cdb5e975}
+\hypertarget{TestDeque_8c_09_09_af56b0c263cd1c83a98415d5ddea43d5f}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{inc\-\_\-test\-\_\-iterator\-\_\-3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_af56b0c263cd1c83a98415d5ddea43d5f}
+\hypertarget{TestDeque_8c_09_09_a217d38c5fbc4d8b7560ba447a34d4aa6}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{dec\-\_\-test\-\_\-iterator\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a217d38c5fbc4d8b7560ba447a34d4aa6}
+\hypertarget{TestDeque_8c_09_09_aa4b42056769d5df6d3f47d51fc280ca1}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{dec\-\_\-test\-\_\-iterator\-\_\-2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aa4b42056769d5df6d3f47d51fc280ca1}
+\hypertarget{TestDeque_8c_09_09_ad7ff570134f28345b6e5014c42e2289b}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{dec\-\_\-test\-\_\-iterator\-\_\-3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_ad7ff570134f28345b6e5014c42e2289b}
+\hypertarget{TestDeque_8c_09_09_ab5366bd0412588be304c640551cbc2d6}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{plus\-\_\-equal\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_ab5366bd0412588be304c640551cbc2d6}
+\hypertarget{TestDeque_8c_09_09_ab0935d9b78b4aa03bd5da24d70dc4e48}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{plus\-\_\-equal\-\_\-2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_ab0935d9b78b4aa03bd5da24d70dc4e48}
+\hypertarget{TestDeque_8c_09_09_a1d1bb53710df471125536d99d5465853}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{plus\-\_\-equal\-\_\-3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a1d1bb53710df471125536d99d5465853}
+\hypertarget{TestDeque_8c_09_09_a65fbb7b9c47ce6ee678fa81a97c16f06}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{minus\-\_\-equal\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a65fbb7b9c47ce6ee678fa81a97c16f06}
+\hypertarget{TestDeque_8c_09_09_a063ec813b1bae74d7a6a1092a8957be8}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{minus\-\_\-equal\-\_\-2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a063ec813b1bae74d7a6a1092a8957be8}
+\hypertarget{TestDeque_8c_09_09_a8d0974a3715ce0afd06a5fd9eae85209}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{minus\-\_\-equal\-\_\-3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a8d0974a3715ce0afd06a5fd9eae85209}
+\hypertarget{TestDeque_8c_09_09_a6ba613c7a563f0284a5c3028f92d014d}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{inc\-\_\-test\-\_\-const\-\_\-iterator\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a6ba613c7a563f0284a5c3028f92d014d}
+\hypertarget{TestDeque_8c_09_09_a6c9e5b621116aa955e99e10f2514dd17}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{inc\-\_\-test\-\_\-const\-\_\-iterator\-\_\-2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a6c9e5b621116aa955e99e10f2514dd17}
+\hypertarget{TestDeque_8c_09_09_aab01341c67e34fdf9f52bafedd507fd4}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{inc\-\_\-test\-\_\-const\-\_\-iterator\-\_\-3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aab01341c67e34fdf9f52bafedd507fd4}
+\hypertarget{TestDeque_8c_09_09_a30f673b5afb71d4a3cd73ae221b1c74a}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{dec\-\_\-test\-\_\-const\-\_\-iterator\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a30f673b5afb71d4a3cd73ae221b1c74a}
+\hypertarget{TestDeque_8c_09_09_a658cfacace7099cca16cb18c43ac08fe}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{dec\-\_\-test\-\_\-const\-\_\-iterator\-\_\-2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a658cfacace7099cca16cb18c43ac08fe}
+\hypertarget{TestDeque_8c_09_09_a64c4ba1e33b218f7248e0503d2052995}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{const\-\_\-iterator\-\_\-plus\-\_\-equal\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a64c4ba1e33b218f7248e0503d2052995}
+\hypertarget{TestDeque_8c_09_09_a3e2aa1da2651f015562b199f90a1fb1e}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{const\-\_\-iterator\-\_\-plus\-\_\-equal\-\_\-2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a3e2aa1da2651f015562b199f90a1fb1e}
+\hypertarget{TestDeque_8c_09_09_ab43c0fe733ccae927c0c3cea394ddceb}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{const\-\_\-iterator\-\_\-plus\-\_\-equal\-\_\-3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_ab43c0fe733ccae927c0c3cea394ddceb}
+\hypertarget{TestDeque_8c_09_09_a3b4d1cd94116a45762c46a0f1201e177}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{const\-\_\-iterator\-\_\-minus\-\_\-equal\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a3b4d1cd94116a45762c46a0f1201e177}
+\hypertarget{TestDeque_8c_09_09_a549e2b635cc5236fc4bb149ac6f3c945}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{const\-\_\-iterator\-\_\-minus\-\_\-equal\-\_\-2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a549e2b635cc5236fc4bb149ac6f3c945}
+\hypertarget{TestDeque_8c_09_09_a5c820c69c17a5759e12299ea785c6e38}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{const\-\_\-iterator\-\_\-minus\-\_\-equal\-\_\-3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a5c820c69c17a5759e12299ea785c6e38}
+\hypertarget{TestDeque_8c_09_09_aa038f11955cae1bf169957db1e393406}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{erase1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_aa038f11955cae1bf169957db1e393406}
+\hypertarget{TestDeque_8c_09_09_affafc6dd2ab8d3e3d920f19e8dfd2f8e}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{erase2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_affafc6dd2ab8d3e3d920f19e8dfd2f8e}
+\hypertarget{TestDeque_8c_09_09_a3fe97f1291ac267dc0b92d75b13ce096}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{erase3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a3fe97f1291ac267dc0b92d75b13ce096}
+\hypertarget{TestDeque_8c_09_09_a26c27ef1c10114fd15865ed1927822f1}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{insert1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a26c27ef1c10114fd15865ed1927822f1}
+\hypertarget{TestDeque_8c_09_09_a676ec9c42ee6abfbc5da61168a2b4a8c}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{insert2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a676ec9c42ee6abfbc5da61168a2b4a8c}
+\hypertarget{TestDeque_8c_09_09_a4861cc7f4f1f2d8f90680487f8e4b6f4}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{resize1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a4861cc7f4f1f2d8f90680487f8e4b6f4}
+\hypertarget{TestDeque_8c_09_09_a4d1fd20f778de0be625788465b7ecbd3}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{resize2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a4d1fd20f778de0be625788465b7ecbd3}
+\hypertarget{TestDeque_8c_09_09_a43548d16dcb856e44d30ad9ebcefaa4f}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{resize3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a43548d16dcb856e44d30ad9ebcefaa4f}
+\hypertarget{TestDeque_8c_09_09_acef2b2b2ad033d418caca9d07a45c1ad}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{resize4}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_acef2b2b2ad033d418caca9d07a45c1ad}
+\hypertarget{TestDeque_8c_09_09_a7db3e26540c8318a0c8e063def7848e7}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{resize5}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a7db3e26540c8318a0c8e063def7848e7}
+\hypertarget{TestDeque_8c_09_09_a636409bc2080e5b006d757a2e4959a3e}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{resize6}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a636409bc2080e5b006d757a2e4959a3e}
+\hypertarget{TestDeque_8c_09_09_a49393b148b2133863b6fd116f00868e7}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{resize\-\_\-test\-\_\-1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a49393b148b2133863b6fd116f00868e7}
+\hypertarget{TestDeque_8c_09_09_a75192a56be259b8bfb3b690f41015ac7}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{resize\-\_\-test\-\_\-3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a75192a56be259b8bfb3b690f41015ac7}
+\hypertarget{TestDeque_8c_09_09_a215253ea5c0cb1afcad6943cf7788c3e}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{swap1}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a215253ea5c0cb1afcad6943cf7788c3e}
+\hypertarget{TestDeque_8c_09_09_a899eb9ffe534295b28b0c274572def9e}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{swap2}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a899eb9ffe534295b28b0c274572def9e}
+\hypertarget{TestDeque_8c_09_09_a7c7c3c95a8e8dede9f3e3e4e5edb8cc5}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{swap3}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a7c7c3c95a8e8dede9f3e3e4e5edb8cc5}
+\hypertarget{TestDeque_8c_09_09_a79c5f0d583b012a972111954cd22db81}{\index{Test\-Deque.\-c++@{Test\-Deque.\-c++}!T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}}
+\index{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E@{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}!TestDeque.c++@{Test\-Deque.\-c++}}
+\subsubsection[{T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}T\-Y\-P\-E\-D\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E (
+\begin{DoxyParamCaption}
+\item[{{\bf Deque\-\_\-\-Fixture}}]{, }
+\item[{{\bf deque\-\_\-types}}]{}
+\end{DoxyParamCaption}
+)}}\label{TestDeque_8c_09_09_a79c5f0d583b012a972111954cd22db81}

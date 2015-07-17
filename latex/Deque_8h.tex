@@ -1,0 +1,71 @@
+\hypertarget{Deque_8h}{\section{Deque.\-h File Reference}
+\label{Deque_8h}\index{Deque.\-h@{Deque.\-h}}
+}
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$cassert$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmy__deque}{my\-\_\-deque$<$ T, A $>$}
+\item 
+class \hyperlink{classmy__deque_1_1iterator}{my\-\_\-deque$<$ T, A $>$\-::iterator}
+\item 
+class \hyperlink{classmy__deque_1_1const__iterator}{my\-\_\-deque$<$ T, A $>$\-::const\-\_\-iterator}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Deque_8h_aaa33844643c4be3e1097bb4b6e719180}{A\-R\-R\-S\-I\-Z\-E}~20
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename A , typename B\-I $>$ }\\B\-I \hyperlink{Deque_8h_ae5ccf961a6e64163beab1ef8f8934fe5}{destroy} (A \&a, B\-I b, B\-I e)
+\item 
+{\footnotesize template$<$typename A , typename I\-I , typename B\-I $>$ }\\B\-I \hyperlink{Deque_8h_a20f04cc89fe5ab59a939406b502c9677}{uninitialized\-\_\-copy} (A \&a, I\-I b, I\-I e, B\-I x)
+\item 
+{\footnotesize template$<$typename A , typename B\-I , typename U $>$ }\\B\-I \hyperlink{Deque_8h_a23cb75ee659792e77576e5395452078a}{uninitialized\-\_\-fill} (A \&a, B\-I b, B\-I e, const U \&v)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{Deque_8h_aaa33844643c4be3e1097bb4b6e719180}{\index{Deque.\-h@{Deque.\-h}!A\-R\-R\-S\-I\-Z\-E@{A\-R\-R\-S\-I\-Z\-E}}
+\index{A\-R\-R\-S\-I\-Z\-E@{A\-R\-R\-S\-I\-Z\-E}!Deque.h@{Deque.\-h}}
+\subsubsection[{A\-R\-R\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-R\-S\-I\-Z\-E~20}}\label{Deque_8h_aaa33844643c4be3e1097bb4b6e719180}
+
+
+\subsection{Function Documentation}
+\hypertarget{Deque_8h_ae5ccf961a6e64163beab1ef8f8934fe5}{\index{Deque.\-h@{Deque.\-h}!destroy@{destroy}}
+\index{destroy@{destroy}!Deque.h@{Deque.\-h}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename A , typename B\-I $>$ B\-I destroy (
+\begin{DoxyParamCaption}
+\item[{A \&}]{a, }
+\item[{B\-I}]{b, }
+\item[{B\-I}]{e}
+\end{DoxyParamCaption}
+)}}\label{Deque_8h_ae5ccf961a6e64163beab1ef8f8934fe5}
+\hypertarget{Deque_8h_a20f04cc89fe5ab59a939406b502c9677}{\index{Deque.\-h@{Deque.\-h}!uninitialized\-\_\-copy@{uninitialized\-\_\-copy}}
+\index{uninitialized\-\_\-copy@{uninitialized\-\_\-copy}!Deque.h@{Deque.\-h}}
+\subsubsection[{uninitialized\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename A , typename I\-I , typename B\-I $>$ B\-I uninitialized\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{A \&}]{a, }
+\item[{I\-I}]{b, }
+\item[{I\-I}]{e, }
+\item[{B\-I}]{x}
+\end{DoxyParamCaption}
+)}}\label{Deque_8h_a20f04cc89fe5ab59a939406b502c9677}
+\hypertarget{Deque_8h_a23cb75ee659792e77576e5395452078a}{\index{Deque.\-h@{Deque.\-h}!uninitialized\-\_\-fill@{uninitialized\-\_\-fill}}
+\index{uninitialized\-\_\-fill@{uninitialized\-\_\-fill}!Deque.h@{Deque.\-h}}
+\subsubsection[{uninitialized\-\_\-fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename A , typename B\-I , typename U $>$ B\-I uninitialized\-\_\-fill (
+\begin{DoxyParamCaption}
+\item[{A \&}]{a, }
+\item[{B\-I}]{b, }
+\item[{B\-I}]{e, }
+\item[{const U \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Deque_8h_a23cb75ee659792e77576e5395452078a}
