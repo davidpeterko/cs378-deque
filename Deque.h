@@ -37,6 +37,7 @@ using std::rel_ops::operator>=;
 template <typename A, typename BI>
 BI destroy (A& a, BI b, BI e) {
     while (b != e) {
+        //std::cout<<"we are in destry while loop and b is: "<<*b<<" this is e: "<<*e+1<<std::endl; 
         --e;
         a.destroy(&*e);}
     return b;}
@@ -50,6 +51,7 @@ BI uninitialized_copy (A& a, II b, II e, BI x) {
     BI p = x;
     try {
         while (b != e) {
+
             a.construct(&*x, *b);
             ++b;
             ++x;}}
@@ -274,10 +276,10 @@ class my_deque {
                 // -----
 
                 bool valid () const {
- 
                     if(_front_outer_index > dq->_outer_size){
                         return false;
                     }
+
 
                     return  true;}
 
@@ -323,7 +325,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * value operator
                  */
                 pointer operator -> () const {
                     return &**this;}
@@ -333,7 +335,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * iterator incrment pre
                  */
                 iterator& operator ++ () {
 
@@ -345,20 +347,13 @@ class my_deque {
                         this->_front_outer_index = this->_front_outer_index + 1;
                     }
                    
-
-                   /// std::cout<<"dq->_top[0]: "<<dq->_top[0]<<std::endl;
-                    //std::cout<<"&(dq[_front_outer_index][_front_inner_index] "<<&(dq[_front_outer_index][_front_inner_index])<<std::endl;
-                    
-                    // if (dq->_top[0]==&(dq[_front_outer_index][_front_inner_index])){
-                    //     throw std::out_of_range("No space has been allocated");
-                    // }
                 
 
                     assert(valid());
                     return *this;}
 
                 /**
-                 * <your documentation>
+                 * iterator increment post
                  */
                 iterator operator ++ (int) {
                     iterator x = *this;
@@ -371,23 +366,27 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * iterator pre decrement
                  */
                 iterator& operator -- () {
                  
-                    this->_front_inner_index = this->_front_inner_index - 1;
+                // std::cout <<"went into decrement function " << std::endl;
 
-                    if(this->_front_inner_index < 0){
-                        this->_front_inner_index = 19;
-                        this->_front_outer_index = this->_front_outer_index - 1;
-                    }
-         
+                    _front_inner_index = _front_inner_index - 1;
+
+                     if((int)_front_inner_index < 0){
+                         
+                         _front_inner_index =  ARRSIZE - 1;
+
+                        _front_outer_index = _front_outer_index - 1;  
+                      }
+                     
 
                     assert(valid());
                     return *this;}
 
                 /**
-                 * <your documentation>
+                 * iterator post decrement
                  */
                 iterator operator -- (int) {
                     iterator x = *this;
@@ -400,7 +399,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * iterator +=
                  */
                 iterator& operator += (difference_type d) {
 
@@ -423,7 +422,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * iterator -=
                  */
                 iterator& operator -= (difference_type d) {
 
@@ -520,7 +519,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 *  cosnt iterator contrsuctor
                  */
                 const_iterator (const my_deque* myd,  size_type inner_index,  size_type outer_index){
                     dq = myd;
@@ -539,7 +538,7 @@ class my_deque {
                 // ----------
 
                 /**
-                 * <your documentation>
+                 * const iterator * operator
                  */
                 reference operator * () const {
                     return dq->_top[_front_outer_index][_front_inner_index];}
@@ -549,7 +548,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * const iterator value
                  */
                 pointer operator -> () const {
                     return &**this;}
@@ -559,7 +558,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * cosnt iterator increment pre
                  */
                 const_iterator& operator ++ () {
                    
@@ -584,7 +583,7 @@ class my_deque {
                     return *this;}
 
                 /**
-                 * <your documentation>
+                 * const iterator increment post
                  */
                 const_iterator operator ++ (int) {
                     const_iterator x = *this;
@@ -597,22 +596,26 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * const iterator decrement, pre
                  */
                 const_iterator& operator -- () {
                     
-                    this->_front_inner_index = this->_front_inner_index - 1;
+                    // std::cout <<"went into decrement function " << std::endl;
 
-                    if(this->_front_inner_index < 0){
-                        this->_front_inner_index = 19;
-                        this->_front_outer_index = this->_front_outer_index - 1;
-                    }
+                    _front_inner_index = _front_inner_index - 1;
+
+                     if((int)_front_inner_index < 0){
+                         
+                         _front_inner_index =  ARRSIZE - 1;
+
+                        _front_outer_index = _front_outer_index - 1;  
+                      }
         
                     assert(valid());
                     return *this;}
 
                 /**
-                 * <your documentation>
+                 * cost iterator decrement, post
                  */
                 const_iterator operator -- (int) {
                     const_iterator x = *this;
@@ -625,7 +628,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * csont iterator operation +=
                  */
                 const_iterator& operator += (difference_type d) {
                     
@@ -647,7 +650,7 @@ class my_deque {
                 // -----------
 
                 /**
-                 * <your documentation>
+                 * const iterator operation -=
                  */
                 const_iterator& operator -= (difference_type d) {
 
@@ -775,6 +778,7 @@ class my_deque {
 
                 _outer_absolute_s = _top;
                 _outer_absolute_e = _top+num_row_count-1;
+                _bot = _outer_absolute_e;
 
                 //outer absolute keeps track of the outer array CONCRETE end points
 
@@ -856,23 +860,31 @@ class my_deque {
         // ----------
 
         /**
-         * <your documentation>
+         * destructs and frees all memory after a deque is used
          */
         ~my_deque () {
-
             
+            //std::cout<< "just entered the destructor " << std::endl;
+            //destroy all the valid objects
             destroy(_a, begin(), end());
 
-            int i = 0;
-            while(_top <= _bot){
-                _a.deallocate(_top[i], ARRSIZE);
-                ++i;
-            }
+            //std::cout<< "finishes destroy " << std::endl;
 
-            size_type temp_size = _outer_size;
+
+            //deallocate all the inner arrays
+            //std::cout<<"the outer size is : " << _outer_size << std::endl;
+
+            for(int i  = 0; i < _outer_size; ++i){
+                _a.deallocate(_top[i], ARRSIZE);
+                //std::cout<< " inside the for loop, deallocating each inner array, now deallo aray: " << i << std::endl;
+            }    
+
+            //std::cout<<"finishse deallocating inner arrays"<<std::endl;
 
             _b.deallocate(_top, _outer_size);
-            
+
+            //std::cout<<"finished deallocating outer array" << std::endl;
+        
             assert(valid());}
 
         // ----------
@@ -880,7 +892,7 @@ class my_deque {
         // ----------
 
         /**
-         * <your documentation>
+         * assignment oeprator
          */
         my_deque& operator = (const my_deque& rhs) {
 
@@ -900,8 +912,8 @@ class my_deque {
             }
             else{
                 clear();
-
-
+                resize(rhs.size());
+                uninitialized_copy(rhs.begin(), rhs.end(), begin());
             }
 
 
@@ -1021,7 +1033,6 @@ class my_deque {
         void clear () {
 
             resize(0);
-            _size = 0;
             assert(valid());}
 
         // -----
@@ -1029,7 +1040,7 @@ class my_deque {
         // -----
 
         /**
-         * <your documentation>
+         * returns a bool to see if the deque is empty or not
          */
         bool empty () const {
             return !size();}
@@ -1039,13 +1050,13 @@ class my_deque {
         // ---
 
         /**
-         * <your documentation>
+         * returns a iterato to the end()
          */
         iterator end () {
             return iterator(this, _inner_back_index, _outer_back_index);}
 
         /**
-         * <your documentation>
+         * returns a const iterator for the end()
          */
         const_iterator end () const {
             // <your code>
@@ -1104,10 +1115,9 @@ class my_deque {
         iterator insert (iterator i, const_reference v) {
             
             //check if there is anymore space in the deque in the back
-            if(&back() == &_top[_outer_size-1][ARRSIZE-1]){
-
-                //resize(_outer_size * 2);
-                //this means that there is no space to pushback
+            if((_outer_back_index == _outer_size -1) && (_inner_back_index == ARRSIZE-1)){
+                size_type force_size = _cap * 2;
+                resize(force_size);
             }
 
 
@@ -1116,7 +1126,7 @@ class my_deque {
                 push_back(v);
             }
 
-            //push back the inner back index, if past the array, 
+            //push back the inner back index, i::deallocate(int*, unsigned long) (in /v/filer4b/v38q001/davidko/Desktop/cs378-deque/TestDeque)f past the array, 
             //reset to the next array @ 0 and increment outer array pointer by 1 to next array
             _inner_back_index = _inner_back_index + 1;
 
@@ -1151,36 +1161,19 @@ class my_deque {
 
             _size = _size - 1;
 
-            //capacity doesnt change
-
-            //std::cout << "This is _inner_end" << *_inner_end << std::endl;
-            //std::cout << "this is _inner_back_index " << _inner_back_index << std::endl;
-
-            //std::cout << "The BEFORE decrement _inner_back_index is " << _inner_back_index << std::endl;
-
-            //_inner_back_index = destroy(_a, _top[_outer_back_index]+_inner_back_index-1, _top[_outer_back_index]+_inner_back_index);
-
             _inner_back_index = _inner_back_index - 1;
 
-            //std::cout << "The _inner_back_index is NOW " << _inner_back_index << std::endl;
             
             if(_inner_back_index < 0){
-                //means it was at the front fo the array, and is now needs to go back tot he previous array before above
 
                 _outer_back_index = _outer_front_index - 1;                 //so we decrement the OUTSIDE array index cause were going back u poen
                 _inner_back_index = ARRSIZE - 1;
-
-                //std::cout << "The _inner_back_index is IF it had to roll back is now " << _inner_back_index << std::endl;
- 
             }
-
-
-
 
             assert(valid());}
 
         /**
-         * <your documentation>
+         * removes the first value from the deque, reduces size, and reset our front indices
          */
         void pop_front () {
 
@@ -1204,7 +1197,7 @@ class my_deque {
         // ----
 
         /**
-         * <your documentation>
+         * pushes the value v to the back of the deque, resizes if no size
          */
         void push_back (const_reference x) {
 
@@ -1214,6 +1207,10 @@ class my_deque {
             }
              
            _inner_back_index=_inner_back_index + 1;
+           if(_inner_back_index > 19){
+            _inner_back_index = 0;
+            _outer_back_index = _outer_back_index + 1;
+           }
 
            _top[_outer_back_index][_inner_back_index - 1]=x;
 
@@ -1222,7 +1219,7 @@ class my_deque {
             assert(valid());}
 
         /**
-         * <your documentation>
+         * pushes a value x into the front, if no size left, resize, and reset indices
          */
         void push_front (const_reference x) {
 
@@ -1233,6 +1230,12 @@ class my_deque {
 
 
             _inner_front_index = _inner_front_index - 1;
+            if(_inner_front_index < 0){
+                _inner_front_index = ARRSIZE -1;
+                _outer_front_index = _outer_front_index - 1;
+            }
+
+
             _top[_outer_front_index][_inner_front_index] = x;            
 
 
@@ -1245,28 +1248,9 @@ class my_deque {
         // ------
 
         /**
-         * <your documentation>
+         * resizes based on the size s passed through
          */
         void resize (size_type s, const_reference v = value_type()) {
-
-            /* 
-                 void resize (size_type s, const_reference v = value_type()) {
-            if (s == size())
-                return;
-            if (s < size())
-                _e = my_destroy(_a, begin() + s, end());
-            else if (s <= capacity())
-                _e = my_uninitialized_fill(_a, end(), begin() + s, v);
-            else {
-                reserve(std::max(2 * size(), s));
-                resize(s, v);}
-            assert(valid());}
-
-            */
-            iterator b= begin();   
-            iterator e=end();
-            iterator temp;
-
 
             if (s == size())
 
@@ -1274,36 +1258,71 @@ class my_deque {
 
             if(s<size()){
 
-                temp=destroy(_a, b+s, e);
-
-                //assign indices
-                //assign _outer_front_index
-                //assign _outer_back_index
-                //assign _inner_front_index
-                //assign _inner_back_index
+                size_type difference = _size - s;
+                
+                destroy(_a, begin()+s, end());          //destroys all the extra stuff we dont need
 
 
+                while(difference > 0){
+
+                    _inner_back_index = _inner_back_index - 1;
+
+                    if(_inner_back_index < 0){
+                        _inner_back_index = ARRSIZE - 1;
+                        _outer_back_index = _outer_back_index - 1;
+                    }
+
+                    difference = difference - 1;
+                }
+
+                //indices are set
+                _size = s;
             }
             else if(s<=_cap){
 
-                temp=uninitialized_fill(_a,e, b+s, v);
-                
-                //assign indices
-                //assign _outer_front_index
-                //assign _outer_back_index
-                //assign _inner_front_index
-                //assign _inner_back_index
+                _size = s;
+                uninitialized_fill(_a, end(), begin() + s, v);
+
+                //we need to reassign the back indices, since the front dont move
+                size_type _outer_front_temp;
+                size_type _inner_front_temp;
+
+                _outer_front_temp = _outer_front_index;
+                _inner_front_temp = _inner_front_index;
 
 
+                size_type temp_size = _size;
+                while(temp_size > 0){
+                    
+                    _inner_front_temp = _inner_front_temp + 1;
+
+                    if(_inner_front_temp > ARRSIZE - 1){
+                        _inner_front_temp = 0;
+                        _outer_front_temp = _outer_front_temp;
+                    }
+
+                    temp_size = temp_size - 1;
+                }
+
+
+                _outer_back_index = _outer_front_temp;
+                _inner_back_index = _inner_front_temp;
             }
-
             //if size > cap
+            //problem = resize doesntwork when we need to move data to thenext arary
+
             else{
+                
+                //std::cout <<"we get into this part where we try n resize bigger" << std::endl;
+
+                _size = s;
 
                 pointer* _new_top;
                 pointer* _new_bot;
 
                 pointer* _old_top = _top;
+
+                //std::cout<<"the original _bot is " << _bot << std::endl;
                 pointer* _old_bot = _bot;
 
                 size_type _new_front_outer_index;
@@ -1313,60 +1332,87 @@ class my_deque {
                 size_type _new_back_inner_index;
 
                 size_type _temp_old_front_outer_index = _outer_front_index;
-                size_type _temp_old_back_outer_inde = _outer_back_index;
+                size_type _temp_old_back_outer_index = _outer_back_index;
 
                 size_type _temp_old_front_inner_index = _inner_front_index;
                 size_type _temp_old_back_inner_index = _inner_back_index;
 
-                //size_type old_data_size = _size;                                 //_size
-                size_type new_outer_size;
+                size_type _old_outer_size = _outer_size;                             //old outer size
+                size_type _old_size = _size;                                        
+
                 size_type offset = 0;
-                size_type new_cap;
-                size_type temp_outer_size=_outer_size;
-                new_outer_size = _outer_size * 2;
+                size_type _new_cap; 
 
-                _new_top = _b.allocate(new_outer_size);                               //now we have the new outer array
+                size_type _new_outer_size = _old_outer_size * 2;
 
-                size_type i = 0;
-                offset = _outer_size / 2;
+                _new_cap = _new_outer_size * ARRSIZE;
 
+                //allocating outer array, with our new outer size
+                _new_top = _b.allocate(_new_outer_size);
+                _new_bot = _new_top + _new_outer_size - 1;
 
-                while(i < offset){                                              //we allocated the first spots for room
-                    _new_top[i] = _a.alloate(ARRSIZE);  
-                    ++i;
+                offset = (_new_outer_size - _old_outer_size) / 2;                   //this should give us the front space we need to fill / offset
+
+                std::cout<<"the offset here is : " << offset << std::endl;
+
+                if(offset == 0){
+                    offset = offset + 1;
                 }
 
-                std::copy(_old_top, _old_bot, _new_top+offset);                 //copies old data to our new data spots, and we end up at the first uninialized spot to allocate
+                size_type running_counter = 0;
 
-                i = i + _outer_size;                                     //this gives us the new index of where we wanna start
+                //allocate the front space before we copy
+                while(running_counter < offset){
+                    _new_top[running_counter] = _a.allocate(ARRSIZE);
+                    running_counter = running_counter + 1;
+                }
+            std::cout<<"the running counter here is : " << offset << std::endl;
 
-                while( i < new_outer_size){                                       //this allocates the rest of the outer array
-                    _top[i] = _a.allocate(ARRSIZE);
-                    ++i;
+
+                //std::cout<<"Get herse before the std:;copy"<< std::endl;
+                //std::cout<<"the old top: " << _old_top << std::endl;
+               // std::cout<<"the old bot: " << _old_bot << std::endl;
+                //std::cout<<"the new top + offset: " << _new_top + offset<< std::endl;
+
+                std::copy(_old_top, _old_bot, _new_top + offset);
+
+                std::cout<<"Get herse after the std:;copy"<< std::endl;
+
+                running_counter = running_counter + _old_outer_size;
+
+                std::cout << "the value of running counter after the copy: " << running_counter << std::endl;
+                std::cout<<"the new outer size : " << _new_outer_size << std::endl;
+
+                while(running_counter < _new_outer_size){
+                    _new_top[running_counter] = _a.allocate(ARRSIZE);
+                    running_counter = running_counter + 1;
+                std::cout << "while loopsdfapssd: " << running_counter << std::endl;
+
                 }
 
-                //reassign the indices of OUTER ARRAY
-                _new_front_outer_index = _temp_old_front_outer_index + offset;
-                _new_back_outer_index = _temp_old_back_outer_inde + offset;
+                std::cout << "now we broke out of the while loop"  << std::endl;
+                std::cout << "the value of running counter breaks out of while loop: " << running_counter << std::endl;
+                std::cout << "the value of offset:  " << offset << std::endl;
 
 
-                //ressign our temps to our globals
+                //reassign values
                 _top = _new_top;
                 _bot = _new_bot;
 
-                _outer_front_index = _new_front_outer_index;
-                _outer_back_index = _new_back_outer_index;
+                _outer_front_index = _temp_old_front_outer_index + offset;
+                _outer_back_index = _temp_old_back_outer_index + offset;
 
-                //the inner indices, dont change
-                _outer_size = new_outer_size;
-                _cap = _outer_size * ARRSIZE;
+                //inner indicies shouldnt move
 
-                //_size doesnt change - since no data added
+                _outer_size = _new_outer_size;
+                _cap = _new_cap;
 
-                //destroy old outer array
 
-                _b.deallocate(_top,temp_outer_size-1);}
+                //deallocate
+                _b.deallocate(_old_top, _old_outer_size - 1);
+                std::cout<<"debugger debugger" << std::endl;
 
+            }
             assert(valid());}
 
         // ----
@@ -1374,10 +1420,9 @@ class my_deque {
         // ----
 
         /**
-         * <your documentation>
+         * returns the size of the deque (actual values)
          */
         size_type size () const {
-            // <your code>
             return _size;}
 
         // ----
@@ -1385,10 +1430,32 @@ class my_deque {
         // ----
 
         /**
-         * <your documentation>
+         * swaps 2 deques values
          */
-        void swap (my_deque&) {
-            // <your code>
+        void swap (my_deque& that) {
+
+            if(_a == that._a){
+                //swap the traits
+
+                std::swap(_top, that._top);
+                std::swap(_bot, that._bot);
+                std::swap(_size, that._size);
+                std::swap(_cap, that._cap);
+                std::swap(_inner_front_index, that._inner_front_index);
+                std::swap(_inner_back_index, that._inner_back_index);
+                std::swap(_outer_front_index, that._outer_front_index);
+                std::swap(_outer_back_index, that._outer_back_index);
+                std::swap(_outer_size, that._outer_size);
+                std::swap(_outer_absolute_e, that._outer_absolute_e);
+                std::swap(_outer_absolute_s, that._outer_absolute_s);
+            }
+
+            else{
+                my_deque x(*this);
+                *this = that;
+                that = x;
+            }
+
             assert(valid());}};
 
 #endif // Deque_h
