@@ -701,9 +701,10 @@ class my_deque {
 
             _a(a) {
                 _size = s;
-                size_type offset = s % ARRSIZE;
-                size_type num_row_count;
+                //size_type offset = s % ARRSIZE;
+                //size_type num_row_count;
 
+                /*
                 if(offset == 0){
                     num_row_count = s/ARRSIZE;
                 }
@@ -711,9 +712,13 @@ class my_deque {
                     num_row_count = s/ARRSIZE + 1;
                 }
 
-                _outer_size = (s/ARRSIZE) + 1;                   //get the outer array size
+                //_outer_size = (s/ARRSIZE) + 1;                   //get the outer array size
                 _outer_size = num_row_count;
+                */
 
+                _outer_size = (s+ARRSIZE-1)/ARRSIZE;                
+
+    
                 _cap = _outer_size * ARRSIZE;
 
                 _top = _b.allocate(_outer_size);                 //allocate outer array
@@ -777,7 +782,7 @@ class my_deque {
                 //run asserts to check inner and outer front and end
 
                 _outer_absolute_s = _top;
-                _outer_absolute_e = _top+num_row_count-1;
+                _outer_absolute_e = _top+_outer_size-1;
                 _bot = _outer_absolute_e;
 
                 //outer absolute keeps track of the outer array CONCRETE end points
@@ -864,28 +869,13 @@ class my_deque {
          */
         ~my_deque () {
             
-            //std::cout<< "just entered the destructor " << std::endl;
-            //destroy all the valid objects
             destroy(_a, begin(), end());
-
-            //std::cout<< "finishes destroy " << std::endl;
-
-
-            //deallocate all the inner arrays
-            //std::cout<<"the outer size is : " << _outer_size << std::endl;
 
             for(int i  = 0; i < _outer_size; ++i){
                 _a.deallocate(_top[i], ARRSIZE);
-                //std::cout<< " inside the for loop, deallocating each inner array, now deallo aray: " << i << std::endl;
             }    
 
-            //std::cout<<"finishse deallocating inner arrays"<<std::endl;
-
             _b.deallocate(_top, _outer_size);
-
-            //std::cout<<"finished deallocating outer array" << std::endl;
-        
-            //commit msg
 
             assert(valid());}
 
@@ -914,8 +904,10 @@ class my_deque {
             }
             else{
                 clear();
-                resize(rhs.size());
-                uninitialized_copy(_a, rhs.begin(), rhs.end(), begin());
+                my_deque temp(rhs);
+                swap(temp);
+                //uninitialized_copy(_a, rhs.begin() + size(), rhs.end(), end());
+
             }
 
 
@@ -1203,20 +1195,22 @@ class my_deque {
          */
         void push_back (const_reference x) {
 
-            if((_outer_back_index == _outer_size -1) && (_inner_back_index == ARRSIZE-1)){
-                size_type force_size = _cap * 2;
-                resize(force_size);
-            }
+           //  if((_outer_back_index == _outer_size -1) && (_inner_back_index == ARRSIZE-1)){
+           //      size_type force_size = _cap + 1;
+           //      resize(force_size);
+           //  }
              
-           _inner_back_index=_inner_back_index + 1;
-           if(_inner_back_index > 19){
-            _inner_back_index = 0;
-            _outer_back_index = _outer_back_index + 1;
-           }
+           // _inner_back_index=_inner_back_index + 1;
+           // if(_inner_back_index > 19){
+           //  _inner_back_index = 0;
+           //  _outer_back_index = _outer_back_index + 1;
+           // }
 
-           _top[_outer_back_index][_inner_back_index - 1]=x;
+           // _top[_outer_back_index][_inner_back_index - 1]=x;
 
-           _size  = _size + 1;
+           // _size  = _size + 1;
+
+           resize(size()+1, x);
 
             assert(valid());}
 
@@ -1366,17 +1360,10 @@ class my_deque {
                 //allocate the front space before we copy
                 while(running_counter < offset){
                     _new_top[running_counter] = _a.allocate(ARRSIZE);
-                    running_counter = running_counter + 1;
+                    ++running_counter;
                 }
-                //std::cout<<"the running counter here is : " << offset << std::endl;
 
-
-                //std::cout<<"Get herse before the std:;copy"<< std::endl;
-                //std::cout<<"the old top: " << _old_top << std::endl;
-               // std::cout<<"the old bot: " << _old_bot << std::endl;
-                //std::cout<<"the new top + offset: " << _new_top + offset<< std::endl;
-
-                std::copy(_old_top, _old_bot, _new_top + offset);
+                std::copy(_old_top, _old_bot+1, _new_top + offset);
 
                 //std::cout<<"Get herse after the std:;copy"<< std::endl;
 
@@ -1392,28 +1379,16 @@ class my_deque {
 
                 }
 
-                //std::cout << "now we broke out of the while loop"  << std::endl;
-                //std::cout << "the value of running counter breaks out of while loop: " << running_counter << std::endl;
-                //std::cout << "the value of offset:  " << offset << std::endl;
-
-
-                //reassign values
                 _top = _new_top;
                 _bot = _new_bot;
 
                 _outer_front_index = _temp_old_front_outer_index + offset;
-                _outer_back_index = _temp_old_back_outer_index + offset + 1;
-
-                //inner indicies shouldnt move
+                _outer_back_index = _temp_old_back_outer_index + offset;
 
                 _outer_size = _new_outer_size;
                 _cap = _new_cap;
 
-
-                //deallocate
-                _b.deallocate(_old_top, _old_outer_size - 1);
-                //std::cout<<"debugger debugger" << std::endl;
-
+                _b.deallocate(_old_top, _old_outer_size);
             }
             assert(valid());}
 
