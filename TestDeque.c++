@@ -1042,6 +1042,26 @@ TYPED_TEST(Deque_Fixture, resize6){
 	ASSERT_EQ(x.size(), 59);
 }
 
+
+
+TYPED_TEST(Deque_Fixture, resize7){
+
+	typedef typename TestFixture::deque_type deque_type;
+
+	deque_type x(25, 0);
+
+	x[0] = 0;
+	x[1] = 1;
+	x[2] = 2;
+	x[3] = 3;
+	x[4] = 4;
+
+	x.resize(63);
+
+	ASSERT_EQ(x.size(), 63);
+}
+
+
 //TEST REPO SOMEONE ELSES RESIZE TEST
 TYPED_TEST(Deque_Fixture, resize_test_1) {
     typedef typename TestFixture::deque_type deque_type;
